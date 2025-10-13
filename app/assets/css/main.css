@@ -1,0 +1,226 @@
+@import "tailwindcss";
+
+@theme {
+    /* MyBizKit Navy color palette */
+    --color-navy-50: #f0f5f9;
+    --color-navy-100: #e6eef5;
+    --color-navy-200: #ccdde8;
+    --color-navy-300: #99bbd1;
+    --color-navy-400: #6699bb;
+    --color-navy-500: #1e3a5f;
+    --color-navy-600: #1a334f;
+    --color-navy-700: #162b40;
+    --color-navy-800: #122430;
+    --color-navy-900: #0e1d20;
+    --color-navy-950: #0a1417;
+
+    /* MyBizKit Mint color palette */
+    --color-mint-50: #f0fdf7;
+    --color-mint-100: #dcfce7;
+    --color-mint-200: #bbf7d0;
+    --color-mint-300: #86efac;
+    --color-mint-400: #a7f3d0;
+    --color-mint-500: #4ade80;
+    --color-mint-600: #22c55e;
+    --color-mint-700: #16a34a;
+    --color-mint-800: #15803d;
+    --color-mint-900: #166534;
+
+    /* Standard grays */
+    --color-gray-50: #f9fafb;
+    --color-gray-100: #f3f4f6;
+    --color-gray-200: #e5e7eb;
+    --color-gray-300: #d1d5db;
+    --color-gray-400: #9ca3af;
+    --color-gray-500: #6b7280;
+    --color-gray-600: #4b5563;
+    --color-gray-700: #374151;
+    --color-gray-800: #1f2937;
+    --color-gray-900: #111827;
+
+    /* MyBizKit Brand Gradients */
+    --background-image-brand-gradient: linear-gradient(135deg, #1e3a5f 0%, #a7f3d0 100%);
+    --background-image-navy-gradient: linear-gradient(135deg, #0e1d20 0%, #1e3a5f 50%, #162b40 100%);
+    --background-image-mint-gradient: linear-gradient(135deg, #f0fdf7 0%, #a7f3d0 50%, #4ade80 100%);
+
+    /* Professional shadows */
+    --shadow-brand: 0 4px 14px 0 rgba(30, 58, 95, 0.15);
+    --shadow-brand-lg: 0 8px 30px 0 rgba(30, 58, 95, 0.25);
+    --shadow-mint: 0 4px 14px 0 rgba(167, 243, 208, 0.15);
+
+    /* Modern typography */
+    --font-family-serif: "Playfair Display", Georgia, "Times New Roman", serif;
+    --font-family-sans: "Source Sans Pro", Inter, Helvetica, Arial, sans-serif;
+    --font-family-display: "Vend Sans", "Lilita One", "Bungee", Inter, "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+    --font-family-mono: "JetBrains Mono", "Fira Code", Consolas, monospace;
+}
+
+/* Modern typography */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-family-display);
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Custom scrollbar with brand theme */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f9fafb;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #1e3a5f;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #a7f3d0;
+}
+
+/* Selection colors */
+::selection {
+    background: #a7f3d0;
+    color: #1e3a5f;
+}
+
+::-moz-selection {
+    background: #a7f3d0;
+    color: #1e3a5f;
+}
+
+/* Form elements styling */
+input, textarea, select {
+    border: 1px solid #d1d5db;
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    font-family: var(--font-family-sans);
+    transition: all 0.2s ease-in-out;
+}
+
+input:focus, textarea:focus, select:focus {
+    outline: none;
+    border-color: #a7f3d0;
+    box-shadow: 0 0 0 3px rgba(167, 243, 208, 0.1);
+}
+
+/* Button hover effects */
+.btn-primary {
+    background: linear-gradient(135deg, #1e3a5f 0%, #162b40 100%);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #a7f3d0 0%, #4ade80 100%);
+    color: #1e3a5f;
+    transform: translateY(-1px);
+    box-shadow: 0 8px 25px rgba(30, 58, 95, 0.15);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: #1e3a5f;
+    border: 2px solid #a7f3d0;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background: #a7f3d0;
+    color: #1e3a5f;
+    transform: translateY(-1px);
+}
+
+/* Professional card shadows */
+.card {
+    background: white;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 14px rgba(30, 58, 95, 0.08);
+    border: 1px solid #f3f4f6;
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    box-shadow: 0 8px 30px rgba(30, 58, 95, 0.12);
+    transform: translateY(-2px);
+}
+
+/* Loading states */
+.skeleton {
+    background: linear-gradient(90deg, #f3f4f6 25%, #e5e7eb 50%, #f3f4f6 75%);
+    background-size: 200% 100%;
+    animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+/* Focus styles for accessibility */
+.focus-ring:focus {
+    outline: 2px solid #a7f3d0;
+    outline-offset: 2px;
+}
+
+/* Mobile-first responsive utilities */
+@media (max-width: 640px) {
+    .mobile-padding {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .card {
+        border: 2px solid #1e3a5f;
+    }
+
+    input, textarea, select {
+        border: 2px solid #1e3a5f;
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    html {
+        scroll-behavior: auto;
+    }
+}
+
+/* Print styles */
+@media print {
+    .no-print {
+        display: none !important;
+    }
+
+    body {
+        color: black !important;
+        background: white !important;
+    }
+}
