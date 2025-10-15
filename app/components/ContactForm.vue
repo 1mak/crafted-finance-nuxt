@@ -264,9 +264,6 @@
 </template>
 
 <script setup lang="ts">
-import FormInput from '~/components/FormInput.vue'
-import FormSelect from '~/components/FormSelect.vue'
-import FormTextarea from '~/components/FormTextarea.vue'
 
 interface Props {
   preSelectedCategory?: string
