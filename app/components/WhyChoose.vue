@@ -56,15 +56,15 @@
             <div class="flex items-center justify-center space-x-8 text-navy-200">
               <div class="flex items-center">
                 <UIcon name="i-heroicons-map-pin" class="mr-2 text-mint-400" />
-                <span class="text-md font-medium">Brisbane Based</span>
+                <span class="text-lg font-medium">Brisbane Based</span>
               </div>
               <div class="flex items-center">
                 <UIcon name="i-heroicons-clock" class="mr-2 text-mint-400" />
-                <span class="text-md font-medium">Fast Delivery</span>
+                <span class="text-lg font-medium">Fast Delivery</span>
               </div>
               <div class="flex items-center">
                 <UIcon name="i-heroicons-shield-check" class="mr-2 text-mint-400" />
-                <span class="text-md font-medium">Quality Guaranteed</span>
+                <span class="text-lg font-medium">Quality Guaranteed</span>
               </div>
             </div>
           </div>

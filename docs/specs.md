@@ -1,448 +1,397 @@
-# MyBizKit - Project Specifications
+# Crafted Finance Website Specification
 
 ## Project Overview
+A modern, professional landing page for Crafted Finance, an Australian finance brokerage specializing in various lending categories including vehicles, marine, travel, equipment, aviation, business, and insurance.
 
-**Business Name:** MyBizKit  
-**Domain:** mybizkit.com.au  
-**Tagline:** Outstanding Branding  
-**Location:** Brisbane, Australia
+**Final URL:** https://crafted-finance.com.au/
 
-**Tech Stack:**
-- Nuxt 4 (Vue 3)
-- Tailwind CSS 4
-- TypeScript (recommended)
+## Tech Stack
+- **Framework:** Nuxt 4
+- **Styling:** Tailwind CSS 4
+- **Email:** Nuxt email plugin (for form submissions)
+- **Deployment:** Cloudflare (configured separately)
 
-## Brand Identity
+## Design System
 
-### Visual Theme
-- **Style:** Modern, slick, friendly, professional
-- **Primary Colors:**
-    - Navy: `#1e3a5f` (or similar navy tone)
-    - Mint: `#a7f3d0` (or similar mint/turquoise)
-- **Typography:** Clean, modern sans-serif (consider Inter, Plus Jakarta Sans, or Outfit)
-- **Design Philosophy:** Mobile-first, minimalist, high-quality imagery
+### Color Palette
+Based on the Crafted Finance logo:
+- **Primary Navy:** `#1e2757` (dark navy from logo)
+- **Primary Blue:** `#00a3e0` (bright cyan/blue from logo)
+- **Light Blue:** `#5db3d4` (lighter accent)
+- **White:** `#ffffff`
+- **Light Gray:** `#f8f9fa` (backgrounds)
+- **Dark Gray:** `#333333` (text)
+- **Medium Gray:** `#6c757d` (secondary text)
 
-### Target Audience
-1. **Business Owners** seeking branded merchandise for their own companies
-2. **B2B Sales Professionals** wanting custom-branded gifts to win new clients (using target company logos)
+### Typography
+- **Headings:** Bold, modern sans-serif (use Tailwind's default or Inter/Poppins)
+- **Body:** Clean, readable sans-serif
+- **Accent:** "CRAFTED" in navy, "FINANCE" in cyan (matching logo)
 
-## Product Catalog
+### Design Inspiration
+Reference: https://jade.finance/ - clean, modern, professional aesthetic with:
+- Large hero sections
+- Clear category cards
+- Smooth animations
+- Professional form design
+- Trust indicators (social proof)
 
-### 1. Key Tags with NFC Chips
-- Physical key tags/keychains
-- Optional NFC chip integration
-- Customization options:
-    - Colors (multiple)
-    - Shapes (various designs)
-    - NFC chip inclusion (yes/no)
-    - NFC chip data (URL, contact info, etc.)
-    - Logo upload
-    - Text engraving options
+## Page Structure
 
-### 2. 3D Business Cards
-- Three-dimensional printed business cards
-- Customization options:
-    - Dimensions/size
-    - Color schemes
-    - Logo upload
-    - Text fields (name, title, contact)
-    - QR code integration
-    - Material finish (matte/glossy)
+### 1. Landing Page (/)
 
-### 3. Customized License Plate Frames
-- Frame with interchangeable top/bottom badges
-- Customization options:
-    - **Frame color** (body of the frame)
-    - **Primary badge color** (foreground/text color)
-    - **Secondary badge color** (background color)
-    - **Logo upload** (for badges)
-    - **Text input** (for URL or custom text on badges)
-    - **Gift box option** (premium packaging)
+#### Hero Section
+- **Background:** Navy gradient with subtle pattern or overlay
+- **Content:**
+  - Logo (use provided image assets)
+  - Headline: "Financing Solutions for Every Journey"
+  - Subheadline: "Trusted Australian finance brokers helping you secure the right funding for vehicles, marine, travel, equipment, aviation, business, and insurance."
+  - Primary CTA button: "Get Started" (scrolls to form)
+  - Secondary CTA: "Explore Solutions" (scrolls to categories)
+- **Visual:** Consider abstract financial/journey imagery or keep clean with geometric shapes
 
-### 4. Stationary Items
-- Pencil boxes
-- Phone holders with built-in Qi wireless chargers
-- Customization options:
-    - Colors
-    - Logo upload
-    - Engraving/printing options
-    - Qi charger inclusion (for phone holders)
+#### Solutions Categories Section
+- **Title:** "Solutions for Every Journey"
+- **Layout:** Grid of 7 category cards (responsive: 1 col mobile, 2 cols tablet, 3-4 cols desktop)
+- **Categories:**
+  1. **Vehicles** - Cars, trucks, motorcycles
+  2. **Marine** - Boats, watercraft
+  3. **Travel** - Caravans, motorhomes
+  4. **Equipment** - Business and industrial equipment
+  5. **Aviation** - Aircraft financing
+  6. **Business** - Business loans and commercial finance
+  7. **Insurance** - Comprehensive insurance solutions
 
-## Site Structure
+- **Card Design:**
+  - Icon (use lucide-react icons or similar)
+  - Category name
+  - Brief description (1-2 lines)
+  - Hover effect: slight lift and color accent
+  - Each card is clickable and scrolls to the contact form with the category pre-selected
 
-### Pages Required
+#### Trust/Social Proof Section
+- **Title:** "Meet Our Expert Team"
+- **Content:**
+  - Brief intro about expertise and commitment
+  - Team member cards with:
+    - Professional headshot (placeholder or extracted from LinkedIn)
+    - Name
+    - Title/Role
+    - LinkedIn profile link button
+    - Key credentials or experience highlight
 
-#### 1. Homepage (`/`)
-Structure components in this order:
+- **Team Members:**
+  1. Olan O'Mahony - https://www.linkedin.com/in/olan-o-mahony-a614587a/
+  2. Robert Sunderland - https://www.linkedin.com/in/robert-sunderland-062274301/
 
-**a) Hero Banner**
-- Full-width, high-impact section
-- Main headline: "Outstanding Branding for Your Business"
-- Subheadline highlighting unique value proposition
-- CTA buttons: "Shop Products" and "Custom Quote"
-- Background: High-quality product image or video placeholder
-- Mobile-optimized with smaller hero on mobile
+- **Additional Trust Elements:**
+  - Australian Credit Licence badge/mention
+  - Years of experience
+  - Customer satisfaction indicator (if available)
+  - Industry affiliations/certifications
 
-**b) Bento Grid - Product Showcase**
-- 4-cell asymmetric grid layout (larger cells for key products)
-- Products featured:
-    1. Key Tags with NFC
-    2. 3D Business Cards
-    3. License Plate Frames
-    4. Stationary (Pencil Boxes & Phone Holders)
-- Each cell includes:
-    - Product image
-    - Product name
-    - Brief description (1 line)
-    - "Explore" CTA button
-- Responsive: 2x2 grid on desktop, single column on mobile
+#### Contact Form Section
+- **Title:** "Start Your Finance Journey Today"
+- **Form Fields:**
+  - First Name (required)
+  - Last Name (required)
+  - Email Address (required, validated)
+  - Phone Number (required, Australian format)
+  - Finance Category (dropdown, required) - pre-populated if user clicked a category card
+    - Options: Vehicles, Marine, Travel, Equipment, Aviation, Business, Insurance, Other
+  - Loan Amount (optional, number input with currency formatting)
+  - Message/Details (textarea, required, min 20 characters)
+  - Consent checkbox (required): "I agree to the Privacy Policy and consent to being contacted by Crafted Finance"
 
-**c) Product Examples Carousel**
-- Horizontal scrolling carousel
-- Real-world product examples
-- High-quality photos of completed projects
-- Caption with project type
-- Infinite loop, auto-play (pausable)
-- Touch/swipe enabled for mobile
+- **Form Behavior:**
+  - Client-side validation with clear error messages
+  - Submit button: "Submit Enquiry"
+  - Loading state during submission
+  - Success message: "Thank you! We'll be in touch within 24 hours."
+  - Error handling with user-friendly messages
+  - Email sent to: [specify email address - placeholder: info@crafted-finance.com.au]
+  - Email format: Professional HTML template with all form data
 
-**d) Instagram Feed - Masonry Grid**
-- Masonry/Pinterest-style layout
-- Pull recent Instagram posts (use placeholder images initially)
-- Overlay with Instagram icon on hover
-- Links to Instagram profile
-- 3-4 columns on desktop, 2 on tablet, 1 on mobile
+#### Footer
+- **Layout:** Multi-column responsive footer (dark navy background)
+- **Columns:**
+  1. **Company Info:**
+    - Logo
+    - Tagline: "Financing Solutions for Every Journey"
 
-**e) Why Choose Us Section**
-- Grid layout (2 columns desktop, 1 column mobile)
-- Key selling points:
-    1. **Local Brisbane Business** - Personal service with local pickup/drop-off options
-    2. **Australia & NZ Shipping** - Fast, reliable delivery across the region
-    3. **Swift Turnaround** - Quick production times without compromising quality
-    4. **Quality Over Price** - Premium materials and attention to detail
-    5. **Hands-On Design** - Collaborative design process with direct communication
-    6. **Easy Communication** - Responsive, friendly customer service
-- Each point with icon, heading, and brief description
+  2. **Quick Links:**
+    - Home
+    - Privacy Policy
+    - Complaints and Compliments
 
-**f) Footer**
-- Contact information
-- Social media links
-- Quick links (Products, About, FAQ, Contact)
-- Newsletter signup
-- Business hours and location
-- Payment methods accepted
+  3. **Contact:**
+    - Email: info@crafted-finance.com.au (placeholder)
+    - Phone: (placeholder - add if available)
+    - Address: (if applicable)
 
-#### 2. Product Listing Page (`/products`)
-- Grid of all products (3 columns desktop, 2 tablet, 1 mobile)
-- Filter options:
-    - Category (Key Tags, Cards, Frames, Stationary)
-    - Price range
-    - Features (NFC, Qi charging, etc.)
-- Sort options: Featured, Price (low-high), Newest
-- Product cards showing:
-    - Primary image
-    - Product name
-    - Starting price
-    - Key features badges
-    - "Customize" CTA
+  4. **Social Media:**
+    - LinkedIn (link to company page if available)
 
-#### 3. Product Detail Page (PDP) (`/products/[slug]`)
-- Left side: Image gallery (main + thumbnails, zoomable)
-- Right side: Product information
-    - Product name
-    - Price (starting from...)
-    - Short description
-    - Star rating placeholder
-    - Customization form (see Customization Options section below)
-    - Add to cart button
-    - Add to wishlist
-- Below fold:
-    - Detailed description tabs (Description, Specifications, Reviews)
-    - Related products carousel
-    - FAQ section specific to product
+- **Footer Bottom (Full Width):**
+  - Legal text (as per Website Guide document):
+    ```
+    Crafted Finance Pty Ltd | ACN: 690 892 409 Credit Representative 572894 is authorised to provide credit assistance by Viking Asset Aggregation Pty Ltd Australian Credit Licence 543046
 
-#### 4. Cart Page (`/cart`)
-- Line items with:
-    - Product image
-    - Product name + customizations summary
-    - Quantity selector
-    - Price
-    - Remove button
-- Order summary sidebar:
-    - Subtotal
-    - Shipping (calculated or TBD)
-    - Total
-    - Promo code field
-    - Checkout button
-- Empty cart state with "Continue Shopping" CTA
+    This website is designed to provide you with factual information only. We do not provide financial or investment advice. Information on this site does not take into account your needs, objectives or financial situation. To understand whether a credit product is right for you, speak to one of our accredited Finance Brokers. Credit provider terms, conditions, interest rates, fees, charges and minimum loan amounts apply. Credit is subject to approval by the relevant credit provider.
+    ```
+  - Copyright: © 2025 Crafted Finance. All rights reserved.
 
-#### 5. About Page (`/about`)
-- Company story
-- Team section (optional)
-- Brisbane location highlight
-- Mission/values
-- Behind-the-scenes photos of 3D printing process
+### 2. Privacy Policy Page (/privacy-policy)
 
-#### 6. Contact Page (`/contact`)
-- Contact form (name, email, phone, message)
-- Business address and map embed
-- Phone and email
-- Business hours
-- Social media links
-- FAQ link
+#### Layout
+- **Header:** Same as landing page (logo + simple nav)
+- **Content:**
+  - Full privacy policy text from the provided document
+  - Well-formatted with proper headings, sections, and spacing
+  - Table of contents at the top for easy navigation (sticky sidebar on desktop)
+  - Readable typography (larger font size, good line height)
+  - Sections properly separated with spacing
 
-#### 7. Custom Quote Page (`/quote`)
-- Multi-step form for custom projects
-- Fields for:
-    - Project type
-    - Quantity
-    - Timeline requirements
-    - Budget range
-    - File uploads (logos, designs)
-    - Contact information
-    - Additional notes
+#### Sections (from document):
+- Introduction
+- Collection and use of personal information
+- Personal information obtained and held
+- We will collect, hold, disclose, and use your personal and credit information to:
+- Sensitive information
+- Purposes for collection
+- How personal information is collected, used, and disclosed
+- Cookies
+- How we hold personal information
+- Access and correction of information
+- Disclosing information overseas
+- Marketing
+- Changes to Privacy Policy
+- Contact Us
 
-## Customization Options System
+**Contact Details (from document):**
+- Addressee: The Privacy Officer
+- Viking Asset Aggregation Pty Ltd
+- Address: Level 3, 12 Waterloo Road, Macquarie Park NSW 2113, Australia
+- Phone: 1800 861 004
+- Email: privacy@vikingaggregation.com.au
 
-### PDP Customization Interface
+### 3. Complaints and Compliments Page (/complaints-and-compliments)
 
-Create a dynamic, multi-step customization form on each PDP:
+#### Layout
+- **Header:** Same as other pages
+- **Content:**
+  - Full complaints handling policy from the provided document
+  - Clear, scannable formatting
+  - Contact information prominently displayed
+  - CTA box: "Lodge a Complaint" with contact methods
 
-**Step 1: Basic Options**
-- Product variant selector (if applicable)
-- Quantity selector
-- Size/dimensions (where relevant)
+#### Sections (from document):
+- Internal Dispute Resolution (IDR) Process
+- How to lodge a complaint or make a compliment
+- Dealing with complaints
+- Response timeframes
+- External dispute resolution - AFCA
 
-**Step 2: Colors**
-- For frames: Frame color, Primary badge color, Secondary badge color
-- For other products: Primary color, Secondary color (if applicable)
-- Use color picker or predefined swatches
-- Visual preview updates in real-time
+**Contact Details (from document):**
+- Addressee: The Complaints Officer
+- Viking Asset Aggregation Pty Ltd
+- Address: Level 3, 12 Waterloo Road, Macquarie Park NSW 2113, Australia
+- Phone: 1800 861 004
+- Email: complimentsandcomplaints@vikingaggregation.com.au
 
-**Step 3: Features**
-- NFC chip inclusion (checkbox) for key tags
-- Qi charger inclusion (checkbox) for phone holders
-- Gift box packaging (checkbox) for frames
-- Material/finish options
+**AFCA Details:**
+- Phone: 1800 931 678
+- Email: info@afca.org.au
+- Address: GPO Box 3, Melbourne VIC 3001
 
-**Step 4: Personalization**
-- Logo upload field (drag-and-drop + browse)
-    - Accepted formats: PNG, SVG, AI, PDF
-    - Size guidelines displayed
-- Text input fields:
-    - For frames: URL or custom text for badges
-    - For cards: Name, title, contact info
-    - Character limits displayed
-- For NFC chips: URL or contact data input
+## Component Architecture
 
-**Step 5: Review & Add to Cart**
-- Summary of all selections
-- Visual preview/mockup
-- Price breakdown
-- Add to cart button
-- Save design option (for future reordering)
+### Suggested Nuxt Components
 
-### Data Structure for Customizations
-
-Store customization data as JSON in cart/order:
-
-```json
-{
-  "productId": "frame-001",
-  "customizations": {
-    "frameColor": "#1e3a5f",
-    "primaryBadgeColor": "#ffffff",
-    "secondaryBadgeColor": "#a7f3d0",
-    "logoFile": "uploaded-logo-uuid.png",
-    "badgeText": "mybizkit.com.au",
-    "giftBox": true
-  },
-  "quantity": 2,
-  "price": 89.99
-}
+```
+components/
+├── layout/
+│   ├── Header.vue          # Navigation header
+│   ├── Footer.vue          # Footer with legal text
+│   └── PageHeader.vue      # Reusable page title section
+├── sections/
+│   ├── Hero.vue            # Landing page hero
+│   ├── SolutionsGrid.vue   # Category cards grid
+│   ├── TeamSection.vue     # Team member showcase
+│   ├── ContactForm.vue     # Main contact form
+│   └── TrustBadges.vue     # Credentials/licensing badges
+├── ui/
+│   ├── CategoryCard.vue    # Individual solution category card
+│   ├── TeamCard.vue        # Team member profile card
+│   ├── Button.vue          # Reusable button component
+│   ├── FormInput.vue       # Form input wrapper
+│   ├── FormSelect.vue      # Form dropdown
+│   └── FormTextarea.vue    # Form textarea
+└── content/
+    └── PolicySection.vue   # Privacy/complaints content wrapper
 ```
 
 ## Technical Requirements
 
-### Nuxt 4 Configuration
+### Nuxt Configuration
+- **SEO:** Properly configured meta tags, Open Graph, Twitter cards
+- **Sitemap:** Auto-generated XML sitemap
+- **Robots.txt:** Configured for search engines
+- **Performance:** Optimized images, lazy loading, code splitting
 
-**Required Modules:**
-- `@nuxtjs/tailwindcss` - Styling
-- `@nuxt/image` - Image optimization
-- `@pinia/nuxt` - State management (cart, wishlist)
-- `@vueuse/nuxt` - Composition utilities
-- `nuxt-icon` - Icon system
+### Form Handling
+- **Email Plugin:** Configure Nuxt email module
+- **Validation:** Client-side using Vuelidate or similar
+- **Spam Protection:** Consider honeypot field or simple CAPTCHA
+- **Email Template:** HTML email with company branding
+- **Recipient:** Configure email destination
+- **Confirmation:** Optional confirmation email to user
 
-**Recommended Modules:**
-- `@nuxtjs/seo` - SEO optimization
-- `@formkit/nuxt` - Form handling
-- `@nuxt/content` - Blog/content management (future)
+### Responsive Design
+- **Mobile First:** Design and develop mobile-first
+- **Breakpoints:** Follow Tailwind defaults (sm: 640px, md: 768px, lg: 1024px, xl: 1280px)
+- **Touch Targets:** Ensure adequate size for mobile interactions
+- **Forms:** Stack vertically on mobile, optimize for thumb typing
 
-### Tailwind 4 Configuration
+### Accessibility
+- **ARIA Labels:** Proper labeling for screen readers
+- **Keyboard Navigation:** Full keyboard accessibility
+- **Color Contrast:** Meet WCAG AA standards minimum
+- **Focus States:** Clear focus indicators
+- **Alt Text:** All images have descriptive alt text
+- **Semantic HTML:** Use proper heading hierarchy
 
-**Custom Theme Extensions:**
-```js
-theme: {
-  extend: {
-    colors: {
-      navy: {
-        50: '#e6eef5',
-        500: '#1e3a5f',
-        900: '#0a1829'
-      },
-      mint: {
-        50: '#f0fdf7',
-        400: '#a7f3d0',
-        600: '#4ade80'
-      }
-    },
-    fontFamily: {
-      sans: ['Inter', 'system-ui', 'sans-serif']
-    }
-  }
-}
-```
-
-### Component Architecture
-
-**Atomic Design Structure:**
-```
-components/
-├── base/
-│   ├── Button.vue
-│   ├── Input.vue
-│   ├── Card.vue
-│   └── Badge.vue
-├── product/
-│   ├── ProductCard.vue
-│   ├── ProductGallery.vue
-│   ├── CustomizationForm.vue
-│   └── PriceDisplay.vue
-├── cart/
-│   ├── CartItem.vue
-│   ├── CartSummary.vue
-│   └── CartDrawer.vue
-├── home/
-│   ├── HeroBanner.vue
-│   ├── BentoGrid.vue
-│   ├── ProductCarousel.vue
-│   ├── InstagramFeed.vue
-│   └── WhyUs.vue
-└── layout/
-    ├── Header.vue
-    ├── Footer.vue
-    └── Navigation.vue
-```
-
-### State Management (Pinia)
-
-**Stores Required:**
-- `useCartStore()` - Cart items, total, quantities
-- `useProductStore()` - Product catalog, filters
-- `useCustomizationStore()` - Current customization state
-- `useUserStore()` - User preferences, saved designs
-
-### Responsive Breakpoints
-
-Follow mobile-first approach:
-- Mobile: 0-640px (sm)
-- Tablet: 641-1024px (md-lg)
-- Desktop: 1025px+ (xl-2xl)
+### Performance Targets
+- **Lighthouse Score:** Aim for 90+ in all categories
+- **First Contentful Paint:** < 1.5s
+- **Time to Interactive:** < 3.5s
+- **Images:** Optimized and served in modern formats (WebP)
 
 ## Content Guidelines
 
-### Product Photography
-- High resolution (minimum 2000px width)
-- Multiple angles (front, side, detail shots)
-- Lifestyle photos showing products in use
-- Consistent lighting and background
-- White or light gray background for product shots
-- Context photos for carousel/examples
-
-### Copywriting Tone
+### Tone of Voice
 - Professional yet approachable
-- Focus on business benefits
-- Clear, concise product descriptions
-- Call-out unique features (local, quality, customization)
-- Action-oriented CTAs
+- Trustworthy and transparent
+- Australian context and terminology
+- Avoid overly technical jargon
+- Focus on benefits and outcomes
 
-### SEO Requirements
-- Unique meta titles and descriptions per page
-- Alt text for all images
-- Structured data for products (Schema.org)
-- Mobile-friendly (required)
-- Fast loading times (< 3s)
+### Key Messaging
+- Expertise in diverse financing solutions
+- Personalized service and guidance
+- Authorized and licensed broker
+- Wide network of lenders
+- Streamlined application process
 
-## Implementation Phases
+## Assets Needed
 
-### Phase 1: Foundation (MVP)
-- Setup Nuxt 4 + Tailwind 4 project
-- Create basic layout (header, footer, navigation)
-- Homepage with hero and bento grid
-- Basic product listing page
-- Simple product detail pages (no customization yet)
+### Images
+- ✅ Logo (provided in 3 variations)
+- Hero background image or pattern
+- Team member photos (2 provided via LinkedIn)
+- Category icons (can use icon library)
+- Trust/certification badges
 
-### Phase 2: Core Features
-- Complete PDP with customization interface
-- Cart functionality
-- Product filtering and search
-- Image galleries and carousels
-- Instagram feed integration
+### Copy
+- Category descriptions (7 categories)
+- Team member bios (expand from LinkedIn)
+- About section copy
+- Meta descriptions for SEO
 
-### Phase 3: Enhanced UX
-- Custom quote form
-- Wishlist functionality
-- Saved customizations
-- Product preview/mockup generator
-- Mobile menu optimization
+## Development Phases
 
-### Phase 4: Content & Polish
-- About and Contact pages
-- Why Us section completion
-- Product examples carousel
-- SEO optimization
-- Performance tuning
+### Phase 1: Setup & Structure
+1. Initialize Nuxt 4 project with Tailwind 4
+2. Create component structure
+3. Configure email plugin
+4. Set up routing for 3 pages
 
-### Phase 5: Future Enhancements
-- User accounts/login
-- Order tracking
-- Design templates library
-- Blog/content section
-- Payment integration (Stripe/PayPal)
-- Email notifications
+### Phase 2: Landing Page
+1. Build Hero section
+2. Create Solutions Grid
+3. Develop Team Section
+4. Implement Contact Form
+5. Build Footer
 
-## Success Metrics
+### Phase 3: Content Pages
+1. Privacy Policy page
+2. Complaints page
+3. Proper content formatting
 
-Track these KPIs:
-- Mobile conversion rate (primary focus)
-- Average customization completion rate
-- Cart abandonment rate
-- Time on product pages
-- Custom quote form submissions
-- Brisbane local pickup selection rate
+### Phase 4: Polish & Testing
+1. Responsive testing across devices
+2. Form validation and submission testing
+3. Email delivery testing
+4. Accessibility audit
+5. Performance optimization
+6. SEO optimization
 
-## Notes for Implementation
+### Phase 5: Deployment
+1. Cloudflare configuration
+2. DNS setup
+3. SSL certificate
+4. Final testing on production
 
-1. **Mobile-First Priority:** Design and test on mobile devices first, then scale up
-2. **Performance:** Use lazy loading for images, code splitting for routes
-3. **Accessibility:** Ensure WCAG 2.1 AA compliance
-4. **Loading States:** Implement skeleton screens for better perceived performance
-5. **Error Handling:** Graceful error messages, especially for file uploads
-6. **File Uploads:** Validate file types and sizes, provide clear feedback
-7. **Price Display:** Always show "starting from" for customizable products
-8. **Real-time Preview:** Consider 2D preview for color selections initially, 3D preview in later phase
+## Legal & Compliance
 
-## Contact & Shipping Information
+### Required Elements (per Website Guide)
+✅ Footer legal text (mandatory)
+✅ Privacy Policy page (mandatory)
+✅ Complaints Handling page (mandatory)
+✅ Credit Representative Number displayed
+✅ Australian Credit Licence information
+✅ Disclaimer about financial advice
 
-**Business Details:**
-- Location: Brisbane, Queensland, Australia
-- Shipping: Australia and New Zealand
-- Local option: Drop-off/pickup in Brisbane area
-- Turnaround time: Emphasis on swift delivery
+### Data Handling
+- Form data collection with consent
+- Privacy-compliant email storage
+- No cookies except essential (or cookie banner if tracking added)
 
-Include this information prominently in footer, contact page, and checkout process.
+## Notes for Development
 
----
+1. **Email Configuration:** Ensure email plugin is properly configured with SMTP settings or service (e.g., Resend, SendGrid)
 
-**Document Version:** 1.0  
-**Last Updated:** October 2025  
-**Status:** Ready for Development
+2. **Environment Variables:** Set up for:
+  - Email credentials
+  - Recipient email addresses
+  - Site URL for canonical links
+
+3. **Content Management:** Currently hard-coded. Consider headless CMS integration for future updates if needed.
+
+4. **Analytics:** Add Google Analytics or similar if required (with cookie consent).
+
+5. **Forms:** Consider adding file upload capability for supporting documents in future iterations.
+
+6. **LinkedIn Integration:** Links to profiles are manual. Could enhance with LinkedIn API for dynamic profiles (future enhancement).
+
+7. **Testing:** Test form submissions thoroughly, including error scenarios and email delivery.
+
+## Launch Checklist
+
+- [ ] All content reviewed and approved
+- [ ] Legal text verified with Viking Asset Aggregation
+- [ ] Email delivery tested
+- [ ] Mobile responsiveness verified
+- [ ] Accessibility tested
+- [ ] Performance optimized
+- [ ] SEO meta tags configured
+- [ ] SSL certificate active
+- [ ] DNS properly configured
+- [ ] 404 page created
+- [ ] Favicon added
+- [ ] Social media preview images set
+- [ ] Google Search Console configured
+- [ ] Analytics tracking (if applicable)
+
+## Future Enhancements (Post-Launch)
+
+1. Blog/resources section
+2. Finance calculator tools
+3. Customer testimonials
+4. Case studies
+5. FAQ section
+6. Live chat integration
+7. Loan application portal
+8. Multi-language support
+9. Video content/testimonials
+10. Partner/lender logos section

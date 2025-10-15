@@ -1,95 +1,82 @@
-/** @type {import('tailwindcss').Config} */
-module.exports = {
+export default {
   content: [
-    "./app/**/*.{js,vue,ts}",
     "./components/**/*.{js,vue,ts}",
     "./layouts/**/*.vue",
     "./pages/**/*.vue",
     "./plugins/**/*.{js,ts}",
-    "./app.vue",
-    "./error.vue"
+    "./nuxt.config.{js,ts}",
+    "./app.vue"
   ],
   theme: {
     extend: {
       colors: {
-        navy: {
-          50: '#e6eef5',
-          100: '#ccdde8',
-          200: '#99bbd1',
-          300: '#6699bb',
-          400: '#3377a4',
-          500: '#1e3a5f',
-          600: '#1a334f',
-          700: '#162b40',
-          800: '#122430',
-          900: '#0e1d20'
+        // Crafted Finance Primary Colors
+        'navy': {
+          50: '#f2f4f9',
+          100: '#e5e9f3',
+          200: '#d0d8e7',
+          300: '#b1bfd4',
+          400: '#8da1bd',
+          500: '#5679a3',
+          600: '#3a5c8a',
+          700: '#2f4b71',
+          800: '#2a4260',
+          900: '#252f68',
+          DEFAULT: '#1e2757'
         },
-        mint: {
-          50: '#f0fdf7',
-          100: '#dcfce7',
-          200: '#bbf7d0',
-          300: '#86efac',
-          400: '#a7f3d0',
-          500: '#4ade80',
-          600: '#22c55e',
-          700: '#16a34a',
-          800: '#15803d',
-          900: '#166534'
+        'primary-blue': {
+          50: '#f0f9ff',
+          100: '#e0f2fe',
+          200: '#bae6fd',
+          300: '#7dd3fc',
+          400: '#38bdf8',
+          500: '#0ea5e9',
+          600: '#00a3e0',
+          700: '#0284c7',
+          800: '#0369a1',
+          900: '#0c4a6e',
+          DEFAULT: '#00a3e0'
         },
-        // Standard grays for Tailwind 4.0 compatibility
-        gray: {
-          50: '#f9fafb',
-          100: '#f3f4f6',
-          200: '#e5e7eb',
-          300: '#d1d5db',
-          400: '#9ca3af',
-          500: '#6b7280',
-          600: '#4b5563',
-          700: '#374151',
-          800: '#1f2937',
-          900: '#111827'
+        'light-blue': {
+          50: '#f0f9ff',
+          100: '#e0f2fe',
+          200: '#bae6fd',
+          300: '#7dd3fc',
+          400: '#5db3d4',
+          500: '#0ea5e9',
+          600: '#0284c7',
+          700: '#0369a1',
+          800: '#075985',
+          900: '#0c4a6e',
+          DEFAULT: '#5db3d4'
         },
-
-        coffee: {
-          // Rich coffee browns
-          bean: '#3C2415',     // Dark coffee bean
-          roast: '#5D4037',    // Medium roast
-          espresso: '#4A2C2A', // Espresso brown
-          mocha: '#8D6E63',    // Light coffee
-
-          // Warm earth tones
-          earth: '#A0826D',    // Warm earth
-          clay: '#BCAAA4',     // Light clay
-          sand: '#D7CCC8',     // Warm sand
-          cream: '#F5F5DC',    // Coffee cream
-
-          // Natural accents
-          forest: '#4E5D3A',   // Deep forest green
-          sage: '#87A96B',     // Sage green
-          gold: '#D4AF37',     // Golden honey
-          copper: '#B87333',   // Copper accent
-
-          // Neutrals
-          paper: '#FAF7F2',    // Warm paper white
-          linen: '#F0EDE5',    // Natural linen
-          stone: '#8A8A8A',    // Warm stone grey
-        }
+        // Crafted Finance Grays
+        'light-gray': '#f8f9fa',
+        'dark-gray': '#333333',
+        'medium-gray': '#6c757d'
       },
       fontFamily: {
-        serif: ['Playfair Display', 'Georgia', 'Times New Roman', 'serif'],
-        sans: ['Source Sans Pro', 'Inter', 'Helvetica', 'Arial', 'sans-serif'],
-        display: ['Merriweather', 'Georgia', 'serif'],
+        sans: ['Inter', 'ui-sans-serif', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'Noto Sans', 'sans-serif'],
+        display: ['Inter', 'Plus Jakarta Sans', 'system-ui', '-apple-system', 'sans-serif']
       },
-      backgroundImage: {
-        'coffee-gradient': 'linear-gradient(135deg, #3C2415 0%, #5D4037 50%, #8D6E63 100%)',
-        'earth-gradient': 'linear-gradient(135deg, #4E5D3A 0%, #87A96B 100%)',
-        'warm-gradient': 'linear-gradient(135deg, #F5F5DC 0%, #D7CCC8 100%)',
+      container: {
+        center: true,
+        padding: '1.5rem',
+        screens: {
+          sm: '640px',
+          md: '768px',
+          lg: '1024px',
+          xl: '1280px',
+          '2xl': '1400px'
+        }
       },
       boxShadow: {
-        warm: '0 4px 14px 0 rgba(60, 36, 21, 0.15)',
-        coffee: '0 8px 30px 0 rgba(60, 36, 21, 0.25)',
+        'navy': '0 4px 14px 0 rgba(30, 39, 87, 0.15)',
+        'navy-lg': '0 8px 30px 0 rgba(30, 39, 87, 0.25)',
+        'blue': '0 4px 14px 0 rgba(0, 163, 224, 0.15)',
+        'blue-lg': '0 8px 30px 0 rgba(0, 163, 224, 0.25)'
       }
-    },
+    }
   },
   plugins: []
 }

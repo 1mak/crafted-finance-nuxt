@@ -1,32 +1,52 @@
+
 @import "tailwindcss";
 
 @theme {
-    /* MyBizKit Navy color palette */
-    --color-navy-50: #f0f5f9;
-    --color-navy-100: #e6eef5;
-    --color-navy-200: #ccdde8;
-    --color-navy-300: #99bbd1;
-    --color-navy-400: #6699bb;
-    --color-navy-500: #1e3a5f;
-    --color-navy-600: #1a334f;
-    --color-navy-700: #162b40;
-    --color-navy-800: #122430;
-    --color-navy-900: #0e1d20;
-    --color-navy-950: #0a1417;
+    /* Crafted Finance Navy color palette - Primary Navy #1e2757 */
+    --color-navy-50: #f2f4f9;
+    --color-navy-100: #e5e9f3;
+    --color-navy-200: #d0d8e7;
+    --color-navy-300: #b1bfd4;
+    --color-navy-400: #8da1bd;
+    --color-navy-500: #5679a3;
+    --color-navy-600: #3a5c8a;
+    --color-navy-700: #2f4b71;
+    --color-navy-800: #2a4260;
+    --color-navy-900: #252f68;
+    --color-navy: #1e2757;
 
-    /* MyBizKit Mint color palette */
-    --color-mint-50: #f0fdf7;
-    --color-mint-100: #dcfce7;
-    --color-mint-200: #bbf7d0;
-    --color-mint-300: #86efac;
-    --color-mint-400: #a7f3d0;
-    --color-mint-500: #4ade80;
-    --color-mint-600: #22c55e;
-    --color-mint-700: #16a34a;
-    --color-mint-800: #15803d;
-    --color-mint-900: #166534;
+    /* Crafted Finance Blue color palette - Primary Blue #00a3e0 */
+    --color-primary-blue-50: #f0f9ff;
+    --color-primary-blue-100: #e0f2fe;
+    --color-primary-blue-200: #bae6fd;
+    --color-primary-blue-300: #7dd3fc;
+    --color-primary-blue-400: #38bdf8;
+    --color-primary-blue-500: #0ea5e9;
+    --color-primary-blue-600: #00a3e0;
+    --color-primary-blue-700: #0284c7;
+    --color-primary-blue-800: #0369a1;
+    --color-primary-blue-900: #0c4a6e;
+    --color-primary-blue: #00a3e0;
 
-    /* Standard grays */
+    /* Light Blue #5db3d4 */
+    --color-light-blue-50: #f0f9ff;
+    --color-light-blue-100: #e0f2fe;
+    --color-light-blue-200: #bae6fd;
+    --color-light-blue-300: #7dd3fc;
+    --color-light-blue-400: #5db3d4;
+    --color-light-blue-500: #0ea5e9;
+    --color-light-blue-600: #0284c7;
+    --color-light-blue-700: #0369a1;
+    --color-light-blue-800: #075985;
+    --color-light-blue-900: #0c4a6e;
+    --color-light-blue: #5db3d4;
+
+    /* Gray scale for Crafted Finance */
+    --color-light-gray: #f8f9fa;
+    --color-dark-gray: #333333;
+    --color-medium-gray: #6c757d;
+
+    /* Standard grays extended */
     --color-gray-50: #f9fafb;
     --color-gray-100: #f3f4f6;
     --color-gray-200: #e5e7eb;
@@ -38,28 +58,35 @@
     --color-gray-800: #1f2937;
     --color-gray-900: #111827;
 
-    /* MyBizKit Brand Gradients */
-    --background-image-brand-gradient: linear-gradient(135deg, #1e3a5f 0%, #a7f3d0 100%);
-    --background-image-navy-gradient: linear-gradient(135deg, #0e1d20 0%, #1e3a5f 50%, #162b40 100%);
-    --background-image-mint-gradient: linear-gradient(135deg, #f0fdf7 0%, #a7f3d0 50%, #4ade80 100%);
+    /* Crafted Finance Brand Gradients */
+    --background-image-navy-gradient: linear-gradient(135deg, #1e2757 0%, #252f68 50%, #2a4260 100%);
+    --background-image-blue-gradient: linear-gradient(135deg, #00a3e0 0%, #5db3d4 50%, #0ea5e9 100%);
+    --background-image-hero-gradient: linear-gradient(135deg, #1e2757 0%, #2a4260 50%, #252f68 100%);
 
-    /* Professional shadows */
-    --shadow-brand: 0 4px 14px 0 rgba(30, 58, 95, 0.15);
-    --shadow-brand-lg: 0 8px 30px 0 rgba(30, 58, 95, 0.25);
-    --shadow-mint: 0 4px 14px 0 rgba(167, 243, 208, 0.15);
+    /* Professional shadows with brand colors */
+    --shadow-navy: 0 4px 14px 0 rgba(30, 39, 87, 0.15);
+    --shadow-navy-lg: 0 8px 30px 0 rgba(30, 39, 87, 0.25);
+    --shadow-blue: 0 4px 14px 0 rgba(0, 163, 224, 0.15);
+    --shadow-blue-lg: 0 8px 30px 0 rgba(0, 163, 224, 0.25);
 
-    /* Modern typography */
-    --font-family-serif: "Playfair Display", Georgia, "Times New Roman", serif;
-    --font-family-sans: "Source Sans Pro", Inter, Helvetica, Arial, sans-serif;
-    --font-family-display: "Vend Sans", "Lilita One", "Bungee", Inter, "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+    /* Typography - Professional finance theme */
+    --font-family-sans: Inter, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --font-family-display: Inter, "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
     --font-family-mono: "JetBrains Mono", "Fira Code", Consolas, monospace;
 }
 
 /* Modern typography */
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-family-display);
-    font-weight: 600;
+    font-weight: 700;
     line-height: 1.2;
+    color: var(--color-dark-gray);
+}
+
+body {
+    font-family: var(--font-family-sans);
+    color: var(--color-dark-gray);
+    line-height: 1.6;
 }
 
 /* Smooth scrolling */
@@ -67,81 +94,114 @@ html {
     scroll-behavior: smooth;
 }
 
-/* Custom scrollbar with brand theme */
+/* Custom scrollbar with Crafted Finance theme */
 ::-webkit-scrollbar {
     width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-    background: #f9fafb;
+    background: var(--color-light-gray);
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #1e3a5f;
+    background: var(--color-navy);
     border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #a7f3d0;
+    background: var(--color-primary-blue);
 }
 
 /* Selection colors */
 ::selection {
-    background: #a7f3d0;
-    color: #1e3a5f;
+    background: var(--color-primary-blue);
+    color: white;
 }
 
 ::-moz-selection {
-    background: #a7f3d0;
-    color: #1e3a5f;
+    background: var(--color-primary-blue);
+    color: white;
 }
 
-/* Form elements styling */
+/* Form elements styling with Crafted Finance theme */
 input, textarea, select {
     border: 1px solid #d1d5db;
     padding: 0.75rem 1rem;
     border-radius: 0.5rem;
     font-family: var(--font-family-sans);
     transition: all 0.2s ease-in-out;
+    background: white;
+    color: var(--color-dark-gray);
 }
 
 input:focus, textarea:focus, select:focus {
     outline: none;
-    border-color: #a7f3d0;
-    box-shadow: 0 0 0 3px rgba(167, 243, 208, 0.1);
+    border-color: var(--color-primary-blue);
+    box-shadow: 0 0 0 3px rgba(0, 163, 224, 0.1);
 }
 
-/* Button hover effects */
+input::placeholder, textarea::placeholder {
+    color: var(--color-medium-gray);
+}
+
+/* Button styles with Crafted Finance branding */
 .btn-primary {
-    background: linear-gradient(135deg, #1e3a5f 0%, #162b40 100%);
+    background: var(--color-primary-blue);
     color: white;
     border: none;
     padding: 0.75rem 1.5rem;
     border-radius: 0.5rem;
-    font-weight: 500;
+    font-weight: 600;
+    font-family: var(--font-family-sans);
     transition: all 0.3s ease;
+    cursor: pointer;
 }
 
 .btn-primary:hover {
-    background: linear-gradient(135deg, #a7f3d0 0%, #4ade80 100%);
-    color: #1e3a5f;
+    background: #0284c7;
     transform: translateY(-1px);
-    box-shadow: 0 8px 25px rgba(30, 58, 95, 0.15);
+    box-shadow: var(--shadow-blue-lg);
+}
+
+.btn-primary:disabled {
+    background: var(--color-medium-gray);
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
 }
 
 .btn-secondary {
-    background: transparent;
-    color: #1e3a5f;
-    border: 2px solid #a7f3d0;
+    background: white;
+    color: var(--color-navy);
+    border: 2px solid white;
     padding: 0.75rem 1.5rem;
     border-radius: 0.5rem;
-    font-weight: 500;
+    font-weight: 600;
+    font-family: var(--font-family-sans);
     transition: all 0.3s ease;
+    cursor: pointer;
 }
 
 .btn-secondary:hover {
-    background: #a7f3d0;
-    color: #1e3a5f;
+    background: rgba(255, 255, 255, 0.9);
+    transform: translateY(-1px);
+}
+
+.btn-outline {
+    background: transparent;
+    color: var(--color-primary-blue);
+    border: 2px solid var(--color-primary-blue);
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    font-family: var(--font-family-sans);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.btn-outline:hover {
+    background: var(--color-primary-blue);
+    color: white;
     transform: translateY(-1px);
 }
 
@@ -149,14 +209,53 @@ input:focus, textarea:focus, select:focus {
 .card {
     background: white;
     border-radius: 0.75rem;
-    box-shadow: 0 4px 14px rgba(30, 58, 95, 0.08);
+    box-shadow: 0 4px 14px rgba(30, 39, 87, 0.08);
     border: 1px solid #f3f4f6;
     transition: all 0.3s ease;
 }
 
 .card:hover {
-    box-shadow: 0 8px 30px rgba(30, 58, 95, 0.12);
+    box-shadow: var(--shadow-navy-lg);
     transform: translateY(-2px);
+}
+
+/* Hero section specific styles */
+.hero-navy {
+    background: var(--background-image-navy-gradient);
+}
+
+.hero-pattern {
+    background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.15) 1px, transparent 0);
+    background-size: 20px 20px;
+}
+
+/* Category card hover effects */
+.category-card {
+    transition: all 0.3s ease;
+}
+
+.category-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-navy-lg);
+}
+
+.category-icon {
+    color: var(--color-primary-blue);
+    transition: all 0.3s ease;
+}
+
+.category-card:hover .category-icon {
+    transform: scale(1.1);
+}
+
+/* Team card styles */
+.team-card {
+    background: var(--color-light-gray);
+    transition: all 0.3s ease;
+}
+
+.team-card:hover {
+    box-shadow: var(--shadow-navy);
 }
 
 /* Loading states */
@@ -177,7 +276,7 @@ input:focus, textarea:focus, select:focus {
 
 /* Focus styles for accessibility */
 .focus-ring:focus {
-    outline: 2px solid #a7f3d0;
+    outline: 2px solid var(--color-primary-blue);
     outline-offset: 2px;
 }
 
@@ -187,16 +286,24 @@ input:focus, textarea:focus, select:focus {
         padding-left: 1rem;
         padding-right: 1rem;
     }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
 }
 
 /* High contrast mode support */
 @media (prefers-contrast: high) {
     .card {
-        border: 2px solid #1e3a5f;
+        border: 2px solid var(--color-navy);
     }
 
     input, textarea, select {
-        border: 2px solid #1e3a5f;
+        border: 2px solid var(--color-navy);
     }
 }
 
@@ -223,4 +330,73 @@ input:focus, textarea:focus, select:focus {
         color: black !important;
         background: white !important;
     }
+}
+
+/* Utility classes for Crafted Finance brand */
+.text-navy {
+    color: var(--color-navy);
+}
+
+.text-primary-blue {
+    color: var(--color-primary-blue);
+}
+
+.text-light-blue {
+    color: var(--color-light-blue);
+}
+
+.text-dark-gray {
+    color: var(--color-dark-gray);
+}
+
+.text-medium-gray {
+    color: var(--color-medium-gray);
+}
+
+.bg-navy {
+    background-color: var(--color-navy);
+}
+
+.bg-primary-blue {
+    background-color: var(--color-primary-blue);
+}
+
+.bg-light-gray {
+    background-color: var(--color-light-gray);
+}
+
+/* Background gradients */
+.bg-navy-gradient {
+    background: var(--background-image-navy-gradient);
+}
+
+.bg-hero-gradient {
+    background: var(--background-image-hero-gradient);
+}
+
+/* Border utilities */
+.border-primary-blue {
+    border-color: var(--color-primary-blue);
+}
+
+.border-navy {
+    border-color: var(--color-navy);
+}
+
+/* Form validation states */
+.form-error {
+    border-color: #ef4444;
+}
+
+.form-error:focus {
+    border-color: #ef4444;
+    box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+.error-text {
+    color: #ef4444;
+}
+
+.success-text {
+    color: #22c55e;
 }
