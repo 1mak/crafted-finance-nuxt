@@ -1,35 +1,40 @@
-<script setup lang="ts">
-// SEO Meta
-useSeoMeta({
-  title: 'Crafted Finance - Financing Solutions for Every Journey',
-  description: 'Trusted Australian finance brokers helping you secure the right funding for vehicles, marine, travel, equipment, aviation, business, and insurance.',
-  ogTitle: 'Crafted Finance - Financing Solutions for Every Journey',
-  ogDescription: 'Trusted Australian finance brokers helping you secure the right funding for vehicles, marine, travel, equipment, aviation, business, and insurance.',
-  ogImage: '/og-image.jpg',
-  twitterCard: 'summary_large_image',
-})
-
-// State for selected category
-const selectedCategory = ref<string>('')
-
-// Handle category selection from SolutionsGrid
-const handleCategorySelection = (categoryName: string) => {
-  selectedCategory.value = categoryName
-}
-</script>
-
 <template>
-  <div class="min-h-screen bg-white">
-    <!-- Hero Section -->
+  <div>
+    <!-- Other sections -->
     <HeroSection />
 
-    <!-- Solutions Categories Section -->
-    <SolutionsGrid @category-selected="handleCategorySelection" />
-
-    <!-- Trust/Team Section -->
-    <TeamSection />
+    <!-- Solutions Section with enquiry handling -->
+    <SolutionsGrid
+        @category-selected="handleCategorySelection"
+    />
 
     <!-- Contact Form Section -->
-    <ContactForm :pre-selected-category="selectedCategory" />
+    <ContactForm
+        ref="contactFormRef"
+        :pre-selected-category="selectedSolution"
+    />
+
+    <TeamSection />
+
+    <!-- Other sections -->
   </div>
 </template>
+
+<script setup lang="ts">
+import SolutionsGrid from '@/components/SolutionsGrid.vue'
+import ContactForm from '@/components/ContactForm.vue'
+
+const contactFormRef = ref()
+const selectedSolution = ref<string>('')
+
+const handleCategorySelection = (categoryName: string) => {
+  selectedSolution.value = categoryName
+
+  // Optional: Add a slight delay to ensure the form is ready
+  nextTick(() => {
+    if (contactFormRef.value && contactFormRef.value.prefillForm) {
+      contactFormRef.value.prefillForm(categoryName)
+    }
+  })
+}
+</script>

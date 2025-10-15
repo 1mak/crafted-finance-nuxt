@@ -61,7 +61,7 @@
           <h4 class="text-lg font-semibold mb-6 text-primary-blue">Connect</h4>
           <div class="flex space-x-3">
             <a
-                href="https://www.linkedin.com/company/crafted-finance"
+                href="https://www.linkedin.com/company/crafted-finance-pty-ltd/"
                 target="_blank"
                 rel="noopener noreferrer"
                 class="p-2 bg-primary-blue/20 text-primary-blue hover:bg-primary-blue hover:text-white rounded-lg transition-colors"
