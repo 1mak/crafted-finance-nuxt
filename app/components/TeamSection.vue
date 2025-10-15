@@ -45,14 +45,14 @@ const teamMembers = [
     name: 'Olan O\'Mahony',
     title: 'Senior Finance Broker',
     linkedin: 'https://www.linkedin.com/in/olan-o-mahony-a614587a/',
-    image: '/team/olan.jpg', // Placeholder - extract from LinkedIn or use professional photo
+    image: '/img/team/olan_headshot.jpg', // Placeholder - extract from LinkedIn or use professional photo
     description: 'Experienced finance professional specializing in complex lending solutions across multiple industries.'
   },
   {
     name: 'Robert Sunderland',
     title: 'Finance Consultant',
     linkedin: 'https://www.linkedin.com/in/robert-sunderland-062274301/',
-    image: '/team/robert.jpg', // Placeholder
+    image: 'https://placehold.co/100x100', // Placeholder
     description: 'Dedicated to providing personalized finance solutions with a focus on client satisfaction and long-term relationships.'
   }
 ]

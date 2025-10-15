@@ -8,6 +8,14 @@ useSeoMeta({
   ogImage: '/og-image.jpg',
   twitterCard: 'summary_large_image',
 })
+
+// State for selected category
+const selectedCategory = ref<string>('')
+
+// Handle category selection from SolutionsGrid
+const handleCategorySelection = (categoryName: string) => {
+  selectedCategory.value = categoryName
+}
 </script>
 
 <template>
@@ -16,15 +24,12 @@ useSeoMeta({
     <HeroSection />
 
     <!-- Solutions Categories Section -->
-    <SolutionsGrid />
+    <SolutionsGrid @category-selected="handleCategorySelection" />
 
     <!-- Trust/Team Section -->
     <TeamSection />
 
     <!-- Contact Form Section -->
-    <ContactForm />
+    <ContactForm :pre-selected-category="selectedCategory" />
   </div>
 </template>
-
-
-

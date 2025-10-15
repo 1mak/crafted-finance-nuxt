@@ -107,7 +107,15 @@
 </template>
 
 <script setup lang="ts">
+import FormSelect from '~/components/FormSelect.vue'
 import FormInput from '~/components/FormInput.vue'
+import FormTextarea from '~/components/FormTextarea.vue'
+
+interface Props {
+  preSelectedCategory?: string
+}
+
+const props = defineProps<Props>()
 
 const form = reactive({
   firstName: '',
@@ -134,15 +142,37 @@ const showSuccess = ref(false)
 
 const categoryOptions = [
   { value: '', label: 'Select a category...' },
-  { value: 'Vehicles', label: 'Vehicles' },
-  { value: 'Marine', label: 'Marine' },
-  { value: 'Travel', label: 'Travel' },
-  { value: 'Equipment', label: 'Equipment' },
-  { value: 'Aviation', label: 'Aviation' },
-  { value: 'Business', label: 'Business' },
-  { value: 'Insurance', label: 'Insurance' },
-  { value: 'Other', label: 'Other' }
+  { value: 'Vehicles', label: 'Vehicles - Cars, trucks, motorcycles' },
+  { value: 'Marine', label: 'Marine - Boats, yachts, watercraft' },
+  { value: 'Travel', label: 'Travel - Caravans, motorhomes' },
+  { value: 'Equipment', label: 'Equipment - Business & industrial' },
+  { value: 'Aviation', label: 'Aviation - Aircraft financing' },
+  { value: 'Business', label: 'Business - Commercial finance' },
+  { value: 'Insurance', label: 'Insurance - Comprehensive solutions' },
+  { value: 'Other', label: 'Other - Please specify in message' }
 ]
+
+// Watch for pre-selected category changes
+watch(() => props.preSelectedCategory, (newCategory) => {
+  if (newCategory && categoryOptions.some(option => option.value === newCategory)) {
+    form.category = newCategory
+
+    // Auto-populate message with category context
+    if (!form.message) {
+      const categoryLabels = {
+        'Vehicles': 'I\'m interested in vehicle financing options.',
+        'Marine': 'I\'m looking for marine/boat financing.',
+        'Travel': 'I\'m interested in caravan or motorhome financing.',
+        'Equipment': 'I need business equipment financing.',
+        'Aviation': 'I\'m looking for aircraft financing options.',
+        'Business': 'I need business finance solutions.',
+        'Insurance': 'I\'m interested in insurance solutions.'
+      }
+
+      form.message = categoryLabels[newCategory as keyof typeof categoryLabels] || 'I\'m interested in your finance solutions.'
+    }
+  }
+}, { immediate: true })
 
 const validateForm = () => {
   let isValid = true
@@ -221,4 +251,13 @@ const submitForm = async () => {
     isSubmitting.value = false
   }
 }
+
+// Expose method to external components for category selection
+defineExpose({
+  selectCategory: (categoryName: string) => {
+    if (categoryOptions.some(option => option.value === categoryName)) {
+      form.category = categoryName
+    }
+  }
+})
 </script>

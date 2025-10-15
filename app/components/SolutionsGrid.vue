@@ -1,4 +1,3 @@
-
 <template>
   <section id="solutions" class="py-20 bg-light-gray">
     <div class="container mx-auto px-6">
@@ -24,6 +23,11 @@
 </template>
 
 <script setup lang="ts">
+// Define emit for parent component communication
+const emit = defineEmits<{
+  categorySelected: [categoryName: string]
+}>()
+
 const categories = [
   {
     name: 'Vehicles',
@@ -63,18 +67,13 @@ const categories = [
 ]
 
 const selectCategory = (categoryName: string) => {
-  // Emit event to parent or use composable to set selected category
+  // Emit to parent component
+  emit('categorySelected', categoryName)
+
+  // Scroll to contact form
   const contactForm = document.getElementById('contact-form')
   if (contactForm) {
     contactForm.scrollIntoView({ behavior: 'smooth' })
-    // Set category in form - this would need to be implemented with state management
-    setTimeout(() => {
-      const categorySelect = document.getElementById('category-select') as HTMLSelectElement
-      if (categorySelect) {
-        categorySelect.value = categoryName
-        categorySelect.dispatchEvent(new Event('change'))
-      }
-    }, 500)
   }
 }
 </script>
