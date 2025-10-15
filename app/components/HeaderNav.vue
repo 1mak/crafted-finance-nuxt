@@ -1,5 +1,5 @@
 <template>
-  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-100 shadow-sm">
+  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-100 shadow-sm" id="home">
     <div class="container mx-auto px-6">
       <div class="flex items-center justify-between h-20">
 
@@ -29,14 +29,14 @@
           </NuxtLink>
 
           <button
-              @click="scrollToSolutions"
+              @click="scrollTo('solutions')"
               class="text-sm font-medium text-dark-gray hover:text-primary-blue transition-colors duration-200"
           >
             Solutions
           </button>
 
           <button
-              @click="scrollToTeam"
+              @click="scrollTo('team')"
               class="text-sm font-medium text-dark-gray hover:text-primary-blue transition-colors duration-200"
           >
             Our Team
@@ -46,7 +46,7 @@
         <!-- Desktop CTA -->
         <div class="hidden lg:flex items-center space-x-4">
           <Button
-              @click="scrollToContact"
+              @click="scrollTo('contact-form')"
               variant="primary"
               size="medium"
           >
@@ -94,14 +94,14 @@
           </NuxtLink>
 
           <button
-              @click="scrollToSolutions"
+              @click="scrollTo('solutions')"
               class="block w-full text-left px-4 py-3 text-base font-medium text-dark-gray hover:text-primary-blue hover:bg-gray-50 rounded-lg transition-colors"
           >
             Solutions
           </button>
 
           <button
-              @click="scrollToTeam"
+              @click="scrollTo('team')"
               class="block w-full text-left px-4 py-3 text-base font-medium text-dark-gray hover:text-primary-blue hover:bg-gray-50 rounded-lg transition-colors"
           >
             Our Team
@@ -110,7 +110,7 @@
           <!-- Mobile CTA -->
           <div class="pt-4 mt-4 border-t border-gray-100">
             <Button
-                @click="scrollToContact"
+                @click="scrollTo('contact')"
                 variant="primary"
                 size="large"
                 class="w-full"
@@ -124,7 +124,7 @@
   </header>
 </template>
 
-<script setup lang="ts">
+<script setup>
 const route = useRoute()
 const isMobileMenuOpen = ref(false)
 
@@ -134,27 +134,12 @@ watch(() => route.path, () => {
 })
 
 // Scroll functions for navigation
-const scrollToSolutions = () => {
-  const element = document.getElementById('solutions')
+const scrollTo = (section) => {
+  const element = document.getElementById(section)
   if (element) {
     element.scrollIntoView({ behavior: 'smooth' })
     isMobileMenuOpen.value = false
   }
 }
 
-const scrollToTeam = () => {
-  const element = document.querySelector('[data-section="team"]')
-  if (element) {
-    element.scrollIntoView({ behavior: 'smooth' })
-    isMobileMenuOpen.value = false
-  }
-}
-
-const scrollToContact = () => {
-  const element = document.getElementById('contact-form')
-  if (element) {
-    element.scrollIntoView({ behavior: 'smooth' })
-    isMobileMenuOpen.value = false
-  }
-}
 </script>

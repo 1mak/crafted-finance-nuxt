@@ -58,6 +58,8 @@
     --color-gray-800: #1f2937;
     --color-gray-900: #111827;
 
+    --color-green-400: #34d399; /* Success */
+
     /* Crafted Finance Brand Gradients */
     --background-image-navy-gradient: linear-gradient(135deg, #1e2757 0%, #252f68 50%, #2a4260 100%);
     --background-image-blue-gradient: linear-gradient(135deg, #00a3e0 0%, #5db3d4 50%, #0ea5e9 100%);

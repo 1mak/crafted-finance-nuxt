@@ -1,5 +1,5 @@
 <template>
-  <section class="relative py-24 bg-gradient-to-br from-slate-50 via-white to-blue-50 overflow-hidden">
+  <section class="relative py-24 bg-gradient-to-br from-slate-50 via-white to-blue-50 overflow-hidden" id="team">
     <!-- Modern Background Elements -->
     <div class="absolute inset-0">
       <!-- Subtle geometric pattern -->
