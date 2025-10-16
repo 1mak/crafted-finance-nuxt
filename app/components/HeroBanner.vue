@@ -1,6 +1,6 @@
 
 <template>
-  <!-- Hero Banner - Enhanced with Animations -->
+  <!-- Hero Banner - Enhanced with Category Cards -->
   <section class="relative bg-gradient-to-br from-navy-900 via-navy-600 to-navy-900 py-24 lg:py-32 overflow-hidden">
     <!-- Animated Background Elements -->
     <div class="absolute inset-0">
@@ -47,11 +47,8 @@
         <div class="mb-8">
           <h1 class="text-4xl md:text-7xl lg:text-6xl font-bold text-white mb-6 leading-tight">
             <span class="inline-block animate-fade-in-up" style="animation-delay: 0.2s;">
-              Bring your brand to life
+              Finance Solutions for
             </span>
-            <span class="inline-block animate-fade-in-up" style="animation-delay: 0.4s;">
-                with results that can be
-              </span>
             <span class="block text-mint-400 mt-4">
               <!-- Typewriter Effect for Random Word - Fixed Width Container -->
               <span
@@ -82,54 +79,110 @@
         <!-- Animated Subtitle -->
         <p class="text-xl md:text-2xl text-navy-50 mb-8 leading-relaxed max-w-4xl mx-auto animate-fade-in-up opacity-0"
            style="animation-delay: 0.8s; animation-fill-mode: forwards;">
-          Premium custom merchandise and branded products designed in Brisbane.
-          From NFC key tags to 3D business cards, we help your brand stand out.
+          Expert finance brokers helping Australians secure competitive rates for vehicles, marine, travel, equipment, aviation, and business needs.
         </p>
+
+        <!-- Category Cards Section -->
+        <div class="my-16 animate-fade-in-up opacity-0"
+             style="animation-delay: 1s; animation-fill-mode: forwards;">
+          <div class="mb-8">
+            <p class="text-mint-300 text-lg font-medium mb-4">
+              Choose Your Finance Solution
+            </p>
+          </div>
+
+          <!-- Category Cards Grid -->
+          <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-7 gap-3 max-w-6xl mx-auto mb-8">
+            <div
+                v-for="(category, index) in categories"
+                :key="category.name"
+                @click="scrollToContactWithCategory(category.name)"
+                class="group relative bg-white/5 backdrop-blur-sm rounded-2xl p-4 border border-white/10 hover:border-mint-400/40 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-mint-400/20 cursor-pointer overflow-hidden"
+                :style="{ animationDelay: `${1.2 + (index * 0.1)}s` }"
+            >
+              <!-- Background Image -->
+              <div
+                  v-if="category.image"
+                  class="absolute inset-0 opacity-0 group-hover:opacity-20 transition-all duration-700"
+              >
+                <img
+                    :src="category.image"
+                    :alt="category.name"
+                    class="w-full h-full object-cover rounded-2xl scale-110 group-hover:scale-100 transition-transform duration-700"
+                />
+                <div class="absolute inset-0 bg-gradient-to-br from-mint-400/30 via-transparent to-navy/30 rounded-2xl"></div>
+              </div>
+
+              <!-- Glow effect -->
+              <div class="absolute inset-0 bg-gradient-to-r from-mint-400/10 to-mint-300/10 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+              <div class="relative z-10 text-center">
+                <!-- Icon -->
+                <div class="w-12 h-12 mx-auto mb-3 bg-gradient-to-br from-mint-400 to-mint-500 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl group-hover:scale-110 transition-all duration-300">
+                  <Icon :name="category.icon" class="w-6 h-6 text-navy-900" />
+                </div>
+
+                <!-- Title -->
+                <h3 class="text-sm font-semibold text-white group-hover:text-mint-300 transition-colors duration-300 mb-1">
+                  {{ category.name }}
+                </h3>
+
+                <!-- Hover indicator -->
+                <div class="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <Icon name="lucide:arrow-right" class="w-4 h-4 text-mint-400 mx-auto" />
+                </div>
+              </div>
+
+              <!-- Corner accent -->
+              <div class="absolute top-2 right-2 w-3 h-3 bg-mint-400/30 rounded-full opacity-0 group-hover:opacity-100 group-hover:scale-150 transition-all duration-500"></div>
+            </div>
+          </div>
+
+          <p class="text-navy-100 text-sm opacity-75">
+            Click on any category to get started with your finance application
+          </p>
+        </div>
 
         <!-- Animated Call-to-Action Buttons -->
         <div class="flex flex-col sm:flex-row gap-6 justify-center items-center animate-fade-in-up opacity-0"
-             style="animation-delay: 1s; animation-fill-mode: forwards;">
+             style="animation-delay: 1.6s; animation-fill-mode: forwards;">
 
           <!-- Primary CTA - Enhanced with pulse and glow -->
-          <UButton
-              to="/products"
-              size="lg"
-              class="relative group bg-gradient-to-r from-mint-400 via-mint-500 to-mint-400 text-navy-900 hover:from-mint-300 hover:via-mint-400 hover:to-mint-300 font-semibold px-8 py-4 text-lg shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-translate-y-2 "
-              style="animation-delay: 1.2s;"
+          <button
+              @click="scrollToContact"
+              class="relative group bg-gradient-to-r from-mint-400 via-mint-500 to-mint-400 text-navy-900 hover:from-mint-300 hover:via-mint-400 hover:to-mint-300 font-semibold px-8 py-4 text-lg shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-translate-y-2 rounded-xl"
           >
             <!-- Glowing border effect -->
-            <span class="absolute inset-0 rounded-lg bg-gradient-to-r from-mint-300 via-mint-400 to-mint-300 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-sm"></span>
+            <span class="absolute inset-0 rounded-xl bg-gradient-to-r from-mint-300 via-mint-400 to-mint-300 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-sm"></span>
             <span class="relative flex items-center">
-              <UIcon name="i-heroicons-sparkles" class="mr-2 w-5 h-5 animate-spin-slow" />
-              Shop Products
-              <UIcon name="i-heroicons-arrow-right" class="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+              <Icon name="lucide:calculator" class="mr-2 w-5 h-5" />
+              Get Pre-Approved
+              <Icon name="lucide:arrow-right" class="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
             </span>
-          </UButton>
+          </button>
 
           <!-- Secondary CTA -->
-          <UButton
-              to="/quote"
-              size="lg"
-              variant="outline"
-              class="group text-white border-2 border-white hover:bg-white hover:text-navy-900 px-8 py-4 text-lg transition-all duration-500 transform hover:scale-105 relative overflow-hidden"
+          <button
+              @click="scrollToTeam"
+              class="group text-white border-2 border-white hover:bg-white hover:text-navy-900 px-8 py-4 text-lg transition-all duration-500 transform hover:scale-105 relative overflow-hidden rounded-xl"
           >
             <!-- Sliding background effect -->
             <span class="absolute inset-0 bg-white transform -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-in-out"></span>
             <span class="relative flex items-center">
-              Get Custom Quote
-              <UIcon name="i-heroicons-chat-bubble-left-ellipsis" class="ml-2 w-5 h-5 group-hover:rotate-12 transition-transform duration-300" />
+              Meet Our Team
+              <Icon name="lucide:users" class="ml-2 w-5 h-5" />
             </span>
-          </UButton>
+          </button>
         </div>
 
         <!-- Scroll Indicator -->
         <div class="mt-20 animate-fade-in-up opacity-0"
-             style="animation-delay: 1.6s; animation-fill-mode: forwards;">
-          <div class="flex flex-col items-center cursor-pointer group" @click="scrollToProducts">
+             style="animation-delay: 2s; animation-fill-mode: forwards;">
+          <div class="flex flex-col items-center cursor-pointer group" @click="scrollToSolutions">
             <span class="text-mint-300 text-sm font-medium mb-2 group-hover:text-white transition-colors duration-300">
-              Explore Products
+              Learn More
             </span>
-            <UIcon name="i-heroicons-chevron-down" class="text-mint-400 text-2xl animate-bounce group-hover:translate-y-1 transition-transform duration-300" />
+            <Icon name="lucide:chevron-down" class="text-mint-400 text-2xl animate-bounce group-hover:translate-y-1 transition-transform duration-300" />
           </div>
         </div>
       </div>
@@ -140,8 +193,8 @@
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted, computed, nextTick } from 'vue'
 
-// Typewriter effect data
-const randomWords = ['felt', 'held', 'touched', 'perceived', 'experienced', 'sensed', 'remembered', 'trusted', 'valued', 'cherished']
+// Typewriter effect data - Updated for finance
+const financeWords = ['vehicles', 'boats', 'travel', 'equipment', 'aircraft', 'business', 'dreams', 'goals']
 const currentWordIndex = ref(0)
 const currentWord = ref('')
 const showCursor = ref(true)
@@ -149,9 +202,61 @@ const isTyping = ref(false)
 const widthCalculator = ref<HTMLElement>()
 const typewriterWidth = ref('auto')
 
+// Categories data
+const categories = [
+  {
+    name: 'Vehicles',
+    description: 'Cars, trucks, motorcycles and commercial vehicles with competitive rates and flexible terms.',
+    icon: 'lucide:car',
+    image: '/img/stock/vehicle.webp',
+    benefits: ['New & used vehicles', 'Quick approval', 'Competitive rates']
+  },
+  {
+    name: 'Marine',
+    description: 'Boats, yachts, and watercraft financing with specialized marine lending expertise.',
+    icon: 'lucide:anchor',
+    image: '/img/stock/marine.webp',
+    benefits: ['All vessel types', 'Marine specialists', 'Flexible terms']
+  },
+  {
+    name: 'Travel',
+    description: 'Caravans, motorhomes and travel trailers to fund your adventure dreams.',
+    icon: 'lucide:map-pin',
+    image: '/img/stock/travel.webp',
+    benefits: ['Adventure funding', 'Travel experts', 'Dream financing']
+  },
+  {
+    name: 'Equipment',
+    description: 'Business and industrial equipment financing for growth and productivity.',
+    icon: 'lucide:wrench',
+    image: '/img/stock/equipment.webp',
+    benefits: ['Business growth', 'Equipment leasing', 'Tax benefits']
+  },
+  {
+    name: 'Aviation',
+    description: 'Aircraft and aviation equipment with specialized aviation finance knowledge.',
+    icon: 'lucide:plane',
+    image: '/img/stock/aviation.webp',
+    benefits: ['Aircraft loans', 'Aviation expertise', 'Pilot programs']
+  },
+  {
+    name: 'Business',
+    description: 'Business loans and commercial finance solutions for expansion and operations.',
+    icon: 'lucide:briefcase',
+    image: '/img/stock/business.webp',
+    benefits: ['Growth capital', 'Working capital', 'Commercial loans']
+  },
+  {
+    name: 'Insurance',
+    description: 'Comprehensive insurance solutions to protect your valuable investments.',
+    icon: 'lucide:shield-check',
+    benefits: ['Asset protection', 'Coverage options', 'Risk management']
+  }
+]
+
 // Find the longest word for width calculation
 const longestWord = computed(() => {
-  return randomWords.reduce((longest, current) =>
+  return financeWords.reduce((longest, current) =>
       current.length > longest.length ? current : longest
   )
 })
@@ -231,7 +336,7 @@ const eraseWord = () => {
 const cycleWords = async () => {
   while (true) {
     // Type the current word
-    await typeWord(randomWords[currentWordIndex.value])
+    await typeWord(financeWords[currentWordIndex.value])
 
     // Wait before erasing
     await new Promise(resolve => setTimeout(resolve, 2000))
@@ -243,7 +348,7 @@ const cycleWords = async () => {
     await new Promise(resolve => setTimeout(resolve, 300))
 
     // Move to next word
-    currentWordIndex.value = (currentWordIndex.value + 1) % randomWords.length
+    currentWordIndex.value = (currentWordIndex.value + 1) % financeWords.length
   }
 }
 
@@ -258,9 +363,37 @@ const startCursorBlink = () => {
   }, 500)
 }
 
-// Smooth scroll to products section
-const scrollToProducts = () => {
-  const element = document.querySelector('[data-products-section]') ||
+// Smooth scroll functions
+const scrollToContact = () => {
+  const element = document.getElementById('contact-form')
+  if (element) {
+    element.scrollIntoView({ behavior: 'smooth' })
+  }
+}
+
+const scrollToContactWithCategory = (categoryName: string) => {
+  const element = document.getElementById('contact-form')
+  if (element) {
+    element.scrollIntoView({ behavior: 'smooth' })
+    // Emit event or call method to pre-fill form
+    setTimeout(() => {
+      const event = new CustomEvent('prefill-form', {
+        detail: { category: categoryName }
+      })
+      window.dispatchEvent(event)
+    }, 500)
+  }
+}
+
+const scrollToTeam = () => {
+  const element = document.getElementById('team')
+  if (element) {
+    element.scrollIntoView({ behavior: 'smooth' })
+  }
+}
+
+const scrollToSolutions = () => {
+  const element = document.getElementById('solutions') ||
       document.querySelector('section:nth-child(2)')
 
   if (element) {
@@ -274,7 +407,7 @@ const scrollToProducts = () => {
 // Lifecycle hooks
 onMounted(async () => {
   // Set initial word immediately
-  currentWord.value = randomWords[0]
+  currentWord.value = financeWords[0]
 
   // Calculate width after DOM is ready
   await calculateWidth()
@@ -420,6 +553,41 @@ onUnmounted(() => {
 /* Enhanced hover effects */
 .group:hover .animate-bounce {
   animation: bounce 0.6s ease-in-out;
+}
+
+/* Category cards specific styling */
+.backdrop-blur-sm {
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* Responsive grid adjustments */
+@media (max-width: 640px) {
+  /* On mobile, show 2 columns */
+  .grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 641px) and (max-width: 768px) {
+  /* On small tablets, show 3 columns */
+  .sm\:grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  /* On desktop, show 4 columns */
+  .lg\:grid-cols-4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1280px) {
+  /* On large desktop, show all 7 columns */
+  .xl\:grid-cols-7 {
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+  }
 }
 
 /* Responsive adjustments */

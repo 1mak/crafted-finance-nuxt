@@ -89,6 +89,7 @@
           Trusted Australian finance brokers helping you secure the right funding for all your needs.
         </p>
 
+
         <!-- Trust Indicators -->
         <div
             ref="trustRef"
@@ -176,6 +177,58 @@ const showCursor = ref(true)
 const isTyping = ref(false)
 const widthCalculator = ref<HTMLElement>()
 const typewriterWidth = ref('auto')
+
+// Categories data
+const categories = [
+  {
+    name: 'Vehicles',
+    description: 'Cars, trucks, motorcycles and commercial vehicles with competitive rates and flexible terms.',
+    icon: 'lucide:car',
+    image: '/img/stock/vehicle.webp',
+    benefits: ['New & used vehicles', 'Quick approval', 'Competitive rates']
+  },
+  {
+    name: 'Marine',
+    description: 'Boats, yachts, and watercraft financing with specialized marine lending expertise.',
+    icon: 'lucide:anchor',
+    image: '/img/stock/marine.webp',
+    benefits: ['All vessel types', 'Marine specialists', 'Flexible terms']
+  },
+  {
+    name: 'Travel',
+    description: 'Caravans, motorhomes and travel trailers to fund your adventure dreams.',
+    icon: 'lucide:map-pin',
+    image: '/img/stock/travel.webp',
+    benefits: ['Adventure funding', 'Travel experts', 'Dream financing']
+  },
+  {
+    name: 'Equipment',
+    description: 'Business and industrial equipment financing for growth and productivity.',
+    icon: 'lucide:wrench',
+    image: '/img/stock/equipment.webp',
+    benefits: ['Business growth', 'Equipment leasing', 'Tax benefits']
+  },
+  {
+    name: 'Aviation',
+    description: 'Aircraft and aviation equipment with specialized aviation finance knowledge.',
+    icon: 'lucide:plane',
+    image: '/img/stock/aviation.webp',
+    benefits: ['Aircraft loans', 'Aviation expertise', 'Pilot programs']
+  },
+  {
+    name: 'Business',
+    description: 'Business loans and commercial finance solutions for expansion and operations.',
+    icon: 'lucide:briefcase',
+    image: '/img/stock/business.webp',
+    benefits: ['Growth capital', 'Working capital', 'Commercial loans']
+  },
+  {
+    name: 'Insurance',
+    description: 'Comprehensive insurance solutions to protect your valuable investments.',
+    icon: 'lucide:shield-check',
+    benefits: ['Asset protection', 'Coverage options', 'Risk management']
+  }
+]
 
 // Animation refs
 const headlineRef = ref(null)
@@ -284,6 +337,20 @@ const startCursorBlink = () => {
   }, 600)
 }
 
+const scrollToContactWithCategory = (categoryName: string) => {
+  const element = document.getElementById('contact-form')
+  if (element) {
+    element.scrollIntoView({ behavior: 'smooth' })
+    // Emit event or call method to pre-fill form
+    setTimeout(() => {
+      const event = new CustomEvent('prefill-form', {
+        detail: { category: categoryName }
+      })
+      window.dispatchEvent(event)
+    }, 500)
+  }
+}
+
 // Scroll functions
 const scrollToForm = () => {
   document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' })
@@ -322,6 +389,39 @@ onUnmounted(() => {
 </script>
 
 <style scoped>
+
+/* Animation classes */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.8s ease-out forwards;
+}
+
+.animate-float-slow {
+  animation: float-slow 6s ease-in-out infinite;
+}
+
+.animate-float-medium {
+  animation: float-medium 4s ease-in-out infinite;
+}
+
+.animate-float-fast {
+  animation: float-fast 3s ease-in-out infinite;
+}
+
+.animate-sparkle {
+  animation: sparkle 2s ease-in-out infinite;
+}
+
 /* Custom animations for logo pattern */
 @keyframes float-pattern {
   0% { transform: rotate(15deg) scale(1.1) translateX(0) translateY(0); }

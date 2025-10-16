@@ -31,6 +31,35 @@
         </p>
       </div>
 
+      <!-- Category Cards Grid -->
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-3 max-w-7xl mx-auto mb-8">
+        <div
+            v-for="(category, index) in categories"
+            :key="category.name"
+            class="group relative bg-white/5 backdrop-blur-sm rounded-2xl p-4 border border-white/10 hover:border-mint-400/40 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-mint-400/20 cursor-pointer overflow-hidden h-50 mb-4"
+            :style="{ animationDelay: `${1.2 + (index * 0.1)}s` }"
+        >
+          <!-- Background Image -->
+          <div
+              v-if="category.image"
+              class="absolute inset-0 group-hover:opacity-20 transition-all duration-700"
+          >
+            <img
+                :src="category.image"
+                :alt="category.name"
+                class="w-full h-full object-cover rounded-2xl scale-110 group-hover:scale-100 transition-transform duration-700"
+            />
+            <div class="absolute inset-0 bg-gradient-to-br from-mint-400/30 via-transparent to-navy/30 rounded-2xl"></div>
+          </div>
+
+          <!-- Glow effect -->
+          <div class="absolute inset-0 bg-gradient-to-r from-mint-400/10 to-mint-300/10 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+          <!-- Corner accent -->
+          <div class="absolute top-2 right-2 w-3 h-3 bg-mint-400/30 rounded-full opacity-0 group-hover:opacity-100 group-hover:scale-150 transition-all duration-500"></div>
+        </div>
+      </div>
+
       <!-- Interactive Solutions Grid -->
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
         <div
@@ -206,12 +235,6 @@ const categories = [
     image: '/img/stock/business.webp',
     benefits: ['Growth capital', 'Working capital', 'Commercial loans']
   },
-  {
-    name: 'Insurance',
-    description: 'Comprehensive insurance solutions to protect your valuable investments.',
-    icon: 'lucide:shield-check',
-    benefits: ['Asset protection', 'Coverage options', 'Risk management']
-  }
 ]
 
 const selectCategory = (categoryName: string) => {
