@@ -11,26 +11,11 @@
         <div
             class="absolute inset-0 bg-repeat"
             style="
-            background-image: url('/img/logos/crafted_finance_dark_bg.svg');
-            background-size: 200px 100px;
-            transform: rotate(-12deg) scale(1.2);
-            transform-origin: center;
-            filter: brightness(2) contrast(1.5);
-          "
-        ></div>
-      </div>
-
-      <!-- Secondary angled pattern for depth -->
-      <div class="absolute inset-0 opacity-3">
-        <div
-            class="absolute inset-0 bg-repeat"
-            style="
-            background-image: url('/img/logos/crafted_finance_dark_bg.svg');
-            background-size: 150px 75px;
-            transform: rotate(15deg) scale(1.1);
-            transform-origin: center;
-            filter: brightness(1.8) contrast(1.3);
-            animation: float-pattern 20s linear infinite;
+                background-image: url(/img/logos/crafted_finance_dark_bg.svg);
+                background-size: 360px 220px;
+                transform: rotate(-12deg) scale(1.6);
+                transform-origin: center;
+                filter: brightness(1) contrast(3);
           "
         ></div>
       </div>

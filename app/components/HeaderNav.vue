@@ -9,7 +9,7 @@
             <img
                 src="/img/logos/crafted_finance_bright_bg.svg"
                 alt="Crafted Finance"
-                class="h-50 w-auto transition-transform duration-200 group-hover:scale-105"
+                class="h-[50px] w-auto transition-transform duration-200 group-hover:scale-105"
             />
           </NuxtLink>
         </div>

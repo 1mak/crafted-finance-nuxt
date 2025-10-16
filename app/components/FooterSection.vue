@@ -11,7 +11,7 @@
             <img
                 src="/img/logos/crafted_finance_bright_bg.svg"
                 alt="Crafted Finance"
-                class="h-50"
+                class="h-[50px]"
             />
             <p class="text-primary-blue text-sm font-medium">
               Financing Solutions for Every Journey
