@@ -159,19 +159,19 @@
 const teamMembers = [
   {
     name: 'Olan O\'Mahony',
-    title: 'Senior Finance Broker',
+    title: 'Director',
     linkedin: 'https://www.linkedin.com/in/olan-o-mahony-a614587a/',
-    image: '/img/team/olan_headshot.jpg',
+    image: '/img/team/olan_omahony_small.jpg',
     description: 'Experienced finance professional specializing in complex lending solutions across multiple industries with over 15 years of expertise.',
     expertise: ['Vehicle Finance', 'Business Loans', 'Marine Finance', 'Equipment Finance']
   },
   {
     name: 'Robert Sunderland',
-    title: 'Finance Consultant',
+    title: 'Director',
     linkedin: 'https://www.linkedin.com/in/robert-sunderland-062274301/',
-    image: 'https://placehold.co/112x112',
+    image: '/img/team/robert_sundland_small.jpg',
     description: 'Dedicated to providing personalized finance solutions with a focus on client satisfaction and building long-term relationships.',
-    expertise: ['Personal Finance', 'Travel Finance', 'Insurance Solutions', 'Asset Protection']
+    expertise: ['Finance and Business', 'Equipment Finance']
   }
 ]
 </script>

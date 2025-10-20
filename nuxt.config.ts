@@ -10,7 +10,8 @@ export default defineNuxtConfig({
     smtpPort: parseInt(process.env.NITRO_SMTP_PORT || '587'),
     smtpUser: process.env.NITRO_SMTP_USER,
     smtpPass: process.env.NITRO_SMTP_PASS,
-    businessEmail: process.env.NITRO_BUSINESS_EMAIL
+    businessEmail: process.env.NITRO_BUSINESS_EMAIL,
+    resendApiKey: process.env.NITRO_RESEND_API_KEY,
   },
 
   modules: [

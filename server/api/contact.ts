@@ -1,5 +1,5 @@
-// server/api/contact.post.ts
-import nodemailer from 'nodemailer'
+
+import { Resend } from 'resend'
 
 interface ContactFormData {
   firstName: string
@@ -39,22 +39,17 @@ export default defineEventHandler(async (event) => {
     // Get environment variables
     const config = useRuntimeConfig()
 
-    if (!config.smtpHost || !config.smtpUser || !config.smtpPass) {
+    if (!config.resendApiKey) {
       throw createError({
         statusCode: 500,
-        statusMessage: 'Email configuration missing'
+        statusMessage: 'Email configuration missing - Resend API key not found'
       })
     }
 
-    // Create nodemailer transporter
-    const transporter = nodemailer.createTransport({
-      host: config.smtpHost,
-      port: config.smtpPort || 587,
-      auth: {
-        user: config.smtpUser,
-        pass: config.smtpPass,
-      },
-    })
+    console.log('Resend API Key:', config.resendApiKey)
+
+    // Initialize Resend
+    const resend = new Resend(config.resendApiKey)
 
     // Email content for business
     const businessEmailHtml = `
@@ -197,15 +192,15 @@ export default defineEventHandler(async (event) => {
               <div style="background: linear-gradient(135deg, #3b82f6, #1d4ed8); color: white; border-radius: 12px; padding: 25px; margin-bottom: 30px;">
                 <h3 style="margin: 0 0 15px 0; font-size: 18px;">⏱️ What Happens Next?</h3>
                 <div style="display: flex; align-items: center; margin-bottom: 12px;">
-                  <div style="background: rgba(255,255,255,0.2); width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 12px; font-size: 12px; font-weight: bold; text-indent: 8px;">1</div>
+                  <div style="background: rgba(255,255,255,0.2); width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 12px; font-size: 12px; font-weight: bold;">1</div>
                   <span>Our expert broker will contact you within 2 hours during business hours</span>
                 </div>
                 <div style="display: flex; align-items: center; margin-bottom: 12px;">
-                  <div style="background: rgba(255,255,255,0.2); width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 12px; font-size: 12px; font-weight: bold; text-indent: 8px;">2</div>
+                  <div style="background: rgba(255,255,255,0.2); width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 12px; font-size: 12px; font-weight: bold;">2</div>
                   <span>We'll discuss your requirements and assess the best options</span>
                 </div>
                 <div style="display: flex; align-items: center;">
-                  <div style="background: rgba(255,255,255,0.2); width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 12px; font-size: 12px; font-weight: bold; text-indent: 8px;">3</div>
+                  <div style="background: rgba(255,255,255,0.2); width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 12px; font-size: 12px; font-weight: bold;">3</div>
                   <span>Receive competitive finance proposals tailored to your needs</span>
                 </div>
               </div>
@@ -235,34 +230,29 @@ export default defineEventHandler(async (event) => {
       </html>
     `
 
-    // Send email to business
-    const businessEmailOptions = {
-      from: `"${body.firstName} ${body.lastName}" <${config.smtpUser}>`,
-      to: config.businessEmail,
-      subject: `🔥 New ${body.solutionType} Finance Enquiry - ${body.firstName} ${body.lastName}`,
-      html: businessEmailHtml,
-      replyTo: body.email
-    }
-
-    // Send confirmation email to customer
-    const customerEmailOptions = {
-      from: `"Crafted Finance" <${config.smtpUser}>`,
-      to: body.email,
-      subject: `Thank you for your ${body.solutionType} finance enquiry - Crafted Finance`,
-      html: customerEmailHtml
-    }
-
-    // Send both emails
+    // Send both emails using Resend
     const [businessResult, customerResult] = await Promise.all([
-      transporter.sendMail(businessEmailOptions),
-      transporter.sendMail(customerEmailOptions)
+      // Business notification email
+      resend.emails.send({
+        from: 'Crafted Finance <noreply@crafted-finance.com.au>',
+        to: [config.businessEmail || 'noreply@crafted-finance.com.au'],
+        subject: `🔥 New ${body.solutionType} Finance Enquiry - ${body.firstName} ${body.lastName}`,
+        html: businessEmailHtml,
+      }),
+      // Customer confirmation email
+      resend.emails.send({
+        from: 'Crafted Finance <noreply@crafted-finance.com.au>',
+        to: [body.email],
+        subject: `Thank you for your ${body.solutionType} finance enquiry - Crafted Finance`,
+        html: customerEmailHtml,
+      })
     ])
 
     return {
       success: true,
       message: 'Emails sent successfully',
-      businessMessageId: businessResult.messageId,
-      customerMessageId: customerResult.messageId
+      businessMessageId: businessResult.data?.id,
+      customerMessageId: customerResult.data?.id
     }
 
   } catch (error) {

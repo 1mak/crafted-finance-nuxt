@@ -302,7 +302,6 @@ watch(() => props.preSelectedCategory, (newSolution) => {
 const submitForm = async () => {
   isSubmitting.value = true
   const config = useRuntimeConfig()
-  console.log('config', config.smtpHost)
 
   try {
 
