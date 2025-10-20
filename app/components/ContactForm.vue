@@ -303,23 +303,35 @@ const submitForm = async () => {
   isSubmitting.value = true
 
   try {
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 2000))
 
-    // Here you would typically send the data to your backend
-    console.log('Form submitted:', formData)
-
-    // Show success message or redirect
-    alert('Thank you for your enquiry! We\'ll be in touch soon.')
-
-    // Reset form
-    Object.keys(formData).forEach(key => {
-      formData[key as keyof typeof formData] = ''
+    const response = await $fetch('/api/contact', {
+      method: 'POST',
+      body: formData
     })
 
-  } catch (error) {
+    if (response.success) {
+      // Show success message
+      await navigateTo('/', {
+        external: false,
+        replace: false
+      })
+
+      // You could show a success modal/toast instead
+      alert('Thank you for your enquiry! We\'ll be in touch within 2 hours during business hours.')
+
+      // Reset form
+      Object.keys(formData).forEach(key => {
+        formData[key as keyof typeof formData] = ''
+      })
+    }
+
+  } catch (error: any) {
     console.error('Form submission error:', error)
-    alert('Sorry, there was an error submitting your form. Please try again.')
+
+    // Show user-friendly error message
+    const errorMessage = error.data?.message || 'Sorry, there was an error submitting your form. Please try again or call us directly.'
+    alert(errorMessage)
+
   } finally {
     isSubmitting.value = false
   }

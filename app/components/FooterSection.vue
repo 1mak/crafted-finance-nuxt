@@ -89,7 +89,7 @@
               <span>Australian Credit Licence 543046</span>
             </div>
             <div class="flex items-center gap-2 text-sm text-navy">
-              <Icon name="lucide:certificate" class="w-4 h-4 text-primary-blue" />
+              <Icon name="lucide:file-badge" class="w-4 h-4 text-primary-blue" />
               <span>Credit Representative 572894</span>
             </div>
           </div>
