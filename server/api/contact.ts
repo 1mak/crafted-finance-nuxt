@@ -39,7 +39,6 @@ export default defineEventHandler(async (event) => {
     // Get environment variables
     const config = useRuntimeConfig()
 
-
     if (!config.smtpHost || !config.smtpUser || !config.smtpPass) {
       throw createError({
         statusCode: 500,

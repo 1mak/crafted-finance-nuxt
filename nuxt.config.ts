@@ -6,11 +6,11 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   runtimeConfig: {
     // Private keys (only available on server-side)
-    smtpHost: process.env.SMTP_HOST,
-    smtpPort: parseInt(process.env.SMTP_PORT || '587'),
-    smtpUser: process.env.SMTP_USER,
-    smtpPass: process.env.SMTP_PASS,
-    businessEmail: process.env.BUSINESS_EMAIL
+    smtpHost: process.env.NITRO_SMTP_HOST,
+    smtpPort: parseInt(process.env.NITRO_SMTP_PORT || '587'),
+    smtpUser: process.env.NITRO_SMTP_USER,
+    smtpPass: process.env.NITRO_SMTP_PASS,
+    businessEmail: process.env.NITRO_BUSINESS_EMAIL
   },
 
   modules: [
