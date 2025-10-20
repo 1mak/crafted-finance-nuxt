@@ -251,7 +251,7 @@ export default defineEventHandler(async (event) => {
     const [businessResult, customerResult] = await Promise.all([
       // Business notification email
       sendEmail({
-        from: 'Crafted Finance <noreply@crafted-finance.com.au>',
+        from: 'Crafted Finance <noreply@updates.crafted-finance.com.au>',
         to: [config.businessEmail || 'noreply@crafted-finance.com.au'],
         reply_to: body.email,
         subject: `🔥 New ${body.solutionType} Finance Enquiry - ${body.firstName} ${body.lastName}`,
@@ -259,7 +259,7 @@ export default defineEventHandler(async (event) => {
       }),
       // Customer confirmation email
       sendEmail({
-        from: 'Crafted Finance <noreply@crafted-finance.com.au>',
+        from: 'Crafted Finance <noreply@updates.crafted-finance.com.au>',
         to: [body.email],
         subject: `Thank you for your ${body.solutionType} finance enquiry - Crafted Finance`,
         html: customerEmailHtml,
