@@ -1,6 +1,3 @@
-
-import { Resend } from 'resend'
-
 interface ContactFormData {
   firstName: string
   lastName: string
@@ -45,11 +42,6 @@ export default defineEventHandler(async (event) => {
         statusMessage: 'Email configuration missing - Resend API key not found'
       })
     }
-
-    console.log('Resend API Key:', config.resendApiKey)
-
-    // Initialize Resend
-    const resend = new Resend(config.resendApiKey)
 
     // Email content for business
     const businessEmailHtml = `
@@ -230,17 +222,43 @@ export default defineEventHandler(async (event) => {
       </html>
     `
 
-    // Send both emails using Resend
+    // Function to send email via Resend API
+    const sendEmail = async (emailData: {
+      from: string
+      to: string[]
+      subject: string
+      html: string
+      reply_to?: string
+    }) => {
+      const response = await fetch('https://api.resend.com/emails', {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${config.resendApiKey}`,
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(emailData)
+      })
+
+      if (!response.ok) {
+        const error = await response.text()
+        throw new Error(`Resend API error: ${response.status} - ${error}`)
+      }
+
+      return await response.json()
+    }
+
+    // Send both emails using direct API calls
     const [businessResult, customerResult] = await Promise.all([
       // Business notification email
-      resend.emails.send({
+      sendEmail({
         from: 'Crafted Finance <noreply@crafted-finance.com.au>',
         to: [config.businessEmail || 'noreply@crafted-finance.com.au'],
+        reply_to: body.email,
         subject: `🔥 New ${body.solutionType} Finance Enquiry - ${body.firstName} ${body.lastName}`,
         html: businessEmailHtml,
       }),
       // Customer confirmation email
-      resend.emails.send({
+      sendEmail({
         from: 'Crafted Finance <noreply@crafted-finance.com.au>',
         to: [body.email],
         subject: `Thank you for your ${body.solutionType} finance enquiry - Crafted Finance`,
@@ -251,8 +269,8 @@ export default defineEventHandler(async (event) => {
     return {
       success: true,
       message: 'Emails sent successfully',
-      businessMessageId: businessResult.data?.id,
-      customerMessageId: customerResult.data?.id
+      businessMessageId: businessResult.id,
+      customerMessageId: customerResult.id
     }
 
   } catch (error) {
