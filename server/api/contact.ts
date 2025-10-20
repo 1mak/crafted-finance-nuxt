@@ -49,15 +49,13 @@ export default defineEventHandler(async (event) => {
 
     // Create nodemailer transporter
     const transporter = nodemailer.createTransport({
-      host: 'smtp.office365.com',
+      host: config.smtpHost,
       port: config.smtpPort || 587,
       auth: {
-        user: 'noreply@crafted-finance.com.au',
-        pass: 'dresdenX2025!',
+        user: config.smtpUser,
+        pass: config.smtpPass,
       },
     })
-
-    console.log('SMTP Transporter created', transporter)
 
     // Email content for business
     const businessEmailHtml = `
