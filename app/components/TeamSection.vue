@@ -171,7 +171,7 @@ const teamMembers = [
     linkedin: 'https://www.linkedin.com/in/robert-sunderland-062274301/',
     image: '/img/team/robert_sundland_small.jpg',
     description: 'Dedicated to providing personalized finance solutions with a focus on client satisfaction and building long-term relationships.',
-    expertise: ['Finance and Business', 'Equipment Finance']
+    expertise: ['Finance and Business', 'Equipment Finance', 'Vehicle Finance']
   }
 ]
 </script>
