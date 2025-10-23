@@ -1,4 +1,3 @@
-
 <template>
   <div class="min-h-screen bg-white">
     <!-- Page Header -->
@@ -50,7 +49,7 @@
                   Crafted Finance Pty Ltd| ACN: 690 892 409 is firmly committed to protecting the privacy and
                   confidentiality of personal information. We take our obligations seriously to handle your
                   personal information in accordance with the requirements of the Privacy Act 1988. This Privacy
-                  Policy sets out details about how we collect, use and manage your personal information.                </p>
+                  Policy sets out details about how we collect, use and manage your personal information.</p>
                 <p>
                   We are committed to protecting your privacy and handling your personal information in accordance with the Privacy Act 1988 (Cth) and the Credit Reporting Privacy Code. This Privacy Policy explains how we collect, use, hold and disclose your personal information, including credit information.
                 </p>
@@ -80,11 +79,11 @@
                 <ul class="list-disc list-inside space-y-2 ml-4">
                   <li>Providing you quality products and/or services and to improving how we operate and
                     provide those services.</li>
-                    <li>Assessing an application for finance to ensure no financial hardship will occur because
+                  <li>Assessing an application for finance to ensure no financial hardship will occur because
                   of assisting with the provision of a specific loan.</li>
-                      <li>Arranging finance and any related insurance.</li>
-                        <li>Maintaining your contact details.</li>
-                          <li>Fulfilling our legal obligations under applicable laws and rules, such as those relating to
+                  <li>Arranging finance and any related insurance.</li>
+                  <li>Maintaining your contact details.</li>
+                  <li>Fulfilling our legal obligations under applicable laws and rules, such as those relating to
                   Anti-Money Laundering and Counter-Terrorism Financing.</li>
                 </ul>
               </div>
@@ -104,7 +103,7 @@
                   <li>Information relevant to the financial services that we provide or have been requested to
                     provide, including information about customers&#39; or applicant&#39;s financial position, such
                     as:
-                    <ul>
+                    <ul class="list-disc list-inside space-y-2 ml-8 pl-4">
                       <li>details of assets and liabilities, including investments and any existing debts</li>
                       <li>details of income, including employment status, occupation and the name of
                         our clients&#39; employer; and</li>
@@ -274,7 +273,7 @@
 
             <!-- How we hold personal information -->
             <section id="how-held" class="mb-12">
-              <h2 class="text-2xl font-bold text-dark-gray mb-6">9. Cookies/h2>
+              <h2 class="text-2xl font-bold text-dark-gray mb-6">9. Cookies</h2>
               <div class="space-y-4 text-medium-gray leading-relaxed">
                 <p>
                   We may use “cookies”. A cookie allows our servers to identify and interact more effectively with
