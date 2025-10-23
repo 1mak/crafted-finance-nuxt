@@ -25,63 +25,278 @@
           </div>
 
           <h1 class="text-4xl lg:text-6xl font-bold bg-gradient-to-r from-navy via-navy to-primary-blue bg-clip-text text-transparent mb-6">
-            Complaints &
-            <span class="block">Compliments</span>
+            Complaints Handling Policy
           </h1>
+        </div>
 
-          <p class="text-xl text-slate-600 leading-relaxed mb-8">
-            Your feedback helps us improve our services and continue delivering exceptional finance solutions.
-            We value both your concerns and your praise.
-          </p>
+        <div class="bg-white/80 backdrop-blur-sm rounded-2xl p-8 border border-slate-200/50">
 
-          <!-- Quick Stats -->
-          <div class="grid grid-cols-3 md:grid-cols-3 gap-6 max-w-2xl mx-auto">
-            <div class="bg-white/80 backdrop-blur-sm rounded-2xl p-6 border border-slate-200/50">
-              <div class="text-2xl font-bold text-primary-blue mb-2">24hrs</div>
-              <div class="text-sm text-slate-600">Response Time</div>
+        <p class="text-xl text-slate-600 leading-relaxed mb-8">
+            Internal Dispute Resolution (IDR) Process
+        </p>
+          <div class="text-sm">
+            <p>This policy provides information about our internal dispute resolution (IDR) process. Our IDR
+              service is provided to you free of charge.
+            </p>
+            <p>
+              VIKING ASSET AGGREGATION PTY LTD | ACN 661 296 457 | Australian credit licence 543046
+              (we/us/our) believes that it is essential for us to have the ability, authority and proper training
+              to hear and respond appropriately to any complaints or disputes raised by our customers.
+            </p>
+          </div>
+          <h3 class="text-2xl font-bold text-navy mb-6 mt-6">How to Lodge a Complaint or Make a Compliment</h3>
+          <div class="space-y-6">
+            <p class="text-slate-700">You can lodge complaints or make compliments by contacting:</p>
+
+            <div class="bg-slate-50 rounded-xl p-6 border border-slate-200">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <h4 class="font-semibold text-navy mb-3">Contact Details</h4>
+                  <div class="space-y-3 text-sm text-slate-700">
+                    <div class="flex items-start gap-3">
+                      <Icon name="lucide:user" class="w-4 h-4 text-primary-blue mt-0.5" />
+                      <div>
+                        <strong>Addressee:</strong> The Complaints Officer<br>
+                        Viking Asset Aggregation Pty Ltd
+                      </div>
+                    </div>
+                    <div class="flex items-start gap-3">
+                      <Icon name="lucide:map-pin" class="w-4 h-4 text-primary-blue mt-0.5" />
+                      <div>
+                        <strong>Address:</strong><br>
+                        Level 3, 12 Waterloo Road<br>
+                        Macquarie Park NSW 2113, Australia
+                      </div>
+                    </div>
+                    <div class="flex items-center gap-3">
+                      <Icon name="lucide:phone" class="w-4 h-4 text-primary-blue" />
+                      <div><strong>Phone:</strong> 1800 861 004</div>
+                    </div>
+                    <div class="flex items-center gap-3">
+                      <Icon name="lucide:mail" class="w-4 h-4 text-primary-blue" />
+                      <div><strong>Email:</strong> <a href="mailto:complimentsandcomplaints@vikingaggregation.com.au">complimentsandcomplaints@vikingaggregation.com.au</a></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="bg-white/80 backdrop-blur-sm rounded-2xl p-6 border border-slate-200/50">
-              <div class="text-2xl font-bold text-primary-blue mb-2">100%</div>
-              <div class="text-sm text-slate-600">Cases Reviewed</div>
+
+
+            <h3 class="text-2xl font-bold text-navy mb-6">Alternative Methods</h3>
+            <p class="text-sm text-slate-700 mb-4">
+              You may also lodge a complaint by speaking to any representative of our business who will
+              refer you to the Complaints Officer. You should explain the details of your complaint as
+              clearly as you can. You may do this verbally or in writing.
+            </p>
+
+            <p class="text-slate-700 mb-6">
+              To assist complainants who might need additional assistance to lodge a complaint, we:
+            </p>
+
+            <div class="grid grid-cols-1 gap-6">
+              <div class="space-y-4">
+                <div class="flex items-start gap-3">
+                  <Icon name="lucide:check-circle" class="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
+                  <div class="text-sm text-slate-700">
+                    Offer multiple methods for lodging complaints, including phone, email, letter,
+                    social media, in person, or online
+                  </div>
+                </div>
+
+                <div class="flex items-start gap-3">
+                  <Icon name="lucide:check-circle" class="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
+                  <div class="text-sm text-slate-700">
+                    Do not require complaints to be in writing
+                  </div>
+                </div>
+
+                <div class="flex items-start gap-3">
+                  <Icon name="lucide:check-circle" class="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
+                  <div class="text-sm text-slate-700">
+                    Ensure that information provided to the public about our IDR process, including this
+                    policy, is available in a range of languages and formats (including large print and audiotape)
+                  </div>
+                </div>
+              </div>
+
+              <div class="space-y-4">
+                <div class="flex items-start gap-3">
+                  <Icon name="lucide:check-circle" class="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
+                  <div class="text-sm text-slate-700">
+                    Provide training to all staff (not just complaints management staff) to enable staff
+                    to identify, support and assist complainants who need additional assistance,
+                    including cross-cultural training
+                  </div>
+                </div>
+
+                <div class="flex items-start gap-3">
+                  <Icon name="lucide:check-circle" class="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
+                  <div class="text-sm text-slate-700">
+                    Allow representatives to lodge complaints on behalf of complainants, including
+                    financial counsellors, legal representatives, family members and friends
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="bg-white/80 backdrop-blur-sm rounded-2xl p-6 border border-slate-200/50">
-              <div class="text-2xl font-bold text-primary-blue mb-2">AFCA</div>
-              <div class="text-sm text-slate-600">Member</div>
+
+              <h3 class="text-2xl font-bold text-navy mb-6">Dealing with Complaints</h3>
+
+              <p class="text-slate-700 mb-6">Our process for dealing with complaints is as follows:</p>
+
+              <div class="space-y-6">
+                <div class="border-l-4 border-primary-blue pl-6">
+                  <h4 class="font-semibold text-navy mb-2 flex items-center gap-2">
+                    <Icon name="lucide:mail-check" class="w-5 h-5 text-primary-blue" />
+                    Acknowledgement
+                  </h4>
+                  <p class="text-sm text-slate-700">
+                    We will acknowledge receipt of your complaint promptly – that is, within one business day
+                    of receiving it, or as soon as practicable.
+                  </p>
+                </div>
+
+                <div class="border-l-4 border-primary-blue pl-6">
+                  <h4 class="font-semibold text-navy mb-2 flex items-center gap-2">
+                    <Icon name="lucide:search" class="w-5 h-5 text-primary-blue" />
+                    Assessment and Investigation
+                  </h4>
+                  <p class="text-sm text-slate-700">
+                    We will review your complaint carefully and promptly, taking such steps and reviewing
+                    such documents as reasonably necessary.
+                  </p>
+                </div>
+
+                <div class="border-l-4 border-primary-blue pl-6">
+                  <h4 class="font-semibold text-navy mb-2 flex items-center gap-2">
+                    <Icon name="lucide:file-text" class="w-5 h-5 text-primary-blue" />
+                    IDR Response
+                  </h4>
+                  <p class="text-sm text-slate-700">
+                    We will provide an 'IDR response', which is a written communication that sets out the
+                    final outcome of your complaint through our IDR process and your right to take your
+                    complaint to AFCA if you are not satisfied with the IDR response. If we reject or
+                    partially reject your complaint, we will clearly set out the reasons for our decision.
+                  </p>
+                </div>
+              </div>
+
+            <!-- Response Timeframes -->
+            <div class="bg-white/80 backdrop-blur-sm rounded-2xl p-8 border border-slate-200/50">
+              <h3 class="text-2xl font-bold text-navy mb-6">Response Timeframes</h3>
+
+              <div class="space-y-6">
+                <div class="bg-blue-50 rounded-xl p-6 border border-blue-200">
+                  <h4 class="font-semibold text-navy mb-3 flex items-center gap-2">
+                    <Icon name="lucide:clock" class="w-5 h-5 text-primary-blue" />
+                    Standard Timeframe
+                  </h4>
+                  <p class="text-sm text-slate-700">
+                    Generally, we will provide an IDR response to you <strong>no later than 30 calendar days</strong>
+                    after receiving the complaint.
+                  </p>
+                </div>
+
+                <div>
+                  <h4 class="font-semibold text-navy mb-4">Credit-Related Complaints</h4>
+                  <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="bg-orange-50 rounded-xl p-4 border border-orange-200">
+                      <h5 class="font-medium text-navy mb-2 flex items-center gap-2">
+                        <Icon name="lucide:alert-circle" class="w-4 h-4 text-orange-500" />
+                        Default Notices
+                      </h5>
+                      <p class="text-xs text-slate-700">
+                        No later than <strong>21 calendar days</strong> after receiving the complaint
+                      </p>
+                    </div>
+
+                    <div class="bg-orange-50 rounded-xl p-4 border border-orange-200">
+                      <h5 class="font-medium text-navy mb-2 flex items-center gap-2">
+                        <Icon name="lucide:heart-handshake" class="w-4 h-4 text-orange-500" />
+                        Hardship Notices
+                      </h5>
+                      <p class="text-xs text-slate-700">
+                        No later than <strong>21 calendar days</strong> after receiving the complaint
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="bg-slate-50 rounded-xl p-6 border border-slate-200">
+                  <h4 class="font-semibold text-navy mb-3">Exceptions Apply</h4>
+                  <p class="text-sm text-slate-700 mb-3">
+                    If we do not have sufficient information to make a decision, or if we reach an agreement with you.
+                  </p>
+
+                  <div class="space-y-3 text-sm text-slate-700">
+                    <p><strong>We do not need to provide an IDR response if we close your complaint by the end of the fifth business day because we have:</strong></p>
+                    <ul class="list-disc list-inside space-y-1 ml-4">
+                      <li>a) resolved the complaint to your satisfaction; or</li>
+                      <li>b) given you an explanation and/or apology we can take no further action to reasonably address your complaint.</li>
+                    </ul>
+
+                    <p class="mt-4"><strong>However, we must provide a written IDR response for complaints closed by the end of the fifth business day if:</strong></p>
+                    <ul class="list-disc list-inside space-y-1 ml-4">
+                      <li>a) the complainant requests a written response; or</li>
+                      <li>b) the complaint is about hardship.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-3xl p-8 shadow-lg border border-slate-200 mt-6">
+            <div class="text-center mb-8">
+              <Icon name="lucide:shield-check" class="w-16 h-16 text-primary-blue mx-auto mb-4" />
+              <h3 class="text-2xl font-bold text-navy mb-4">External Dispute Resolution</h3>
+              <p class="text-slate-600">
+                If you're not satisfied with our response, you can escalate your complaint to AFCA.
+              </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div>
+                <h4 class="text-lg font-semibold text-navy mb-4">Australian Financial Complaints Authority (AFCA)</h4>
+                <div class="space-y-3 text-sm text-slate-600">
+                  <div class="flex items-center gap-2">
+                    <Icon name="lucide:globe" class="w-4 h-4 text-primary-blue" />
+                    <a href="https://www.afca.org.au" target="_blank" class="hover:text-primary-blue transition-colors">
+                      www.afca.org.au
+                    </a>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <Icon name="lucide:mail" class="w-4 h-4 text-primary-blue" />
+                    <span>info@afca.org.au</span>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <Icon name="lucide:phone" class="w-4 h-4 text-primary-blue" />
+                    <span>1800 931 678</span>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <h4 class="text-lg font-semibold text-navy mb-4">Postal Address</h4>
+                <div class="text-sm text-slate-600">
+                  <p>Australian Financial Complaints Authority</p>
+                  <p>GPO Box 3</p>
+                  <p>Melbourne VIC 3001</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-8 p-4 bg-blue-50 rounded-xl border border-blue-200">
+              <p class="text-sm text-slate-700">
+                <strong>Note:</strong> AFCA provides free, fair and independent financial services complaint resolution.
+                Please allow us the opportunity to resolve your complaint first before contacting AFCA.
+              </p>
             </div>
           </div>
         </div>
       </div>
     </section>
-
-    <!-- Process Overview -->
-    <section class="py-20 bg-white">
-      <div class="container mx-auto px-6">
-        <div class="text-center mb-16">
-          <h2 class="text-3xl lg:text-4xl font-bold text-navy mb-6">Our Resolution Process</h2>
-          <p class="text-xl text-slate-600 max-w-3xl mx-auto">
-            We're committed to addressing your feedback promptly and professionally
-          </p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-          <div v-for="(step, index) in processSteps" :key="step.title" class="text-center">
-            <div class="relative mb-6">
-              <div class="w-16 h-16 bg-gradient-to-br from-primary-blue to-light-blue rounded-2xl mx-auto flex items-center justify-center shadow-lg">
-                <Icon :name="step.icon" class="w-8 h-8 text-white" />
-              </div>
-              <div class="absolute -top-2 -left-2 w-8 h-8 bg-navy rounded-full flex items-center justify-center">
-                <span class="text-white text-sm font-bold">{{ index + 1 }}</span>
-              </div>
-            </div>
-            <h3 class="text-lg font-bold text-navy mb-3">{{ step.title }}</h3>
-            <p class="text-slate-600 text-sm">{{ step.description }}</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- Feedback Form Section -->
-    <section class="relative py-24 bg-gradient-to-br from-navy via-slate-900 to-navy overflow-hidden">
+    <section class="relative py-24 bg-gradient-to-br from-navy via-slate-900 to-navy overflow-hidden" v-if="shareFeedback">
       <!-- Background elements similar to contact form -->
       <div class="absolute inset-0">
         <div class="absolute inset-0 opacity-10">
@@ -273,65 +488,13 @@
       </div>
     </section>
 
-    <!-- AFCA Information -->
-    <section class="py-20 bg-slate-50">
-      <div class="container mx-auto px-6">
-        <div class="max-w-4xl mx-auto">
-          <div class="bg-white rounded-3xl p-8 shadow-lg border border-slate-200">
-            <div class="text-center mb-8">
-              <Icon name="lucide:shield-check" class="w-16 h-16 text-primary-blue mx-auto mb-4" />
-              <h3 class="text-2xl font-bold text-navy mb-4">External Dispute Resolution</h3>
-              <p class="text-slate-600">
-                If you're not satisfied with our response, you can escalate your complaint to AFCA.
-              </p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div>
-                <h4 class="text-lg font-semibold text-navy mb-4">Australian Financial Complaints Authority (AFCA)</h4>
-                <div class="space-y-3 text-sm text-slate-600">
-                  <div class="flex items-center gap-2">
-                    <Icon name="lucide:globe" class="w-4 h-4 text-primary-blue" />
-                    <a href="https://www.afca.org.au" target="_blank" class="hover:text-primary-blue transition-colors">
-                      www.afca.org.au
-                    </a>
-                  </div>
-                  <div class="flex items-center gap-2">
-                    <Icon name="lucide:mail" class="w-4 h-4 text-primary-blue" />
-                    <span>info@afca.org.au</span>
-                  </div>
-                  <div class="flex items-center gap-2">
-                    <Icon name="lucide:phone" class="w-4 h-4 text-primary-blue" />
-                    <span>1800 931 678</span>
-                  </div>
-                </div>
-              </div>
-
-              <div>
-                <h4 class="text-lg font-semibold text-navy mb-4">Postal Address</h4>
-                <div class="text-sm text-slate-600">
-                  <p>Australian Financial Complaints Authority</p>
-                  <p>GPO Box 3</p>
-                  <p>Melbourne VIC 3001</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="mt-8 p-4 bg-blue-50 rounded-xl border border-blue-200">
-              <p class="text-sm text-slate-700">
-                <strong>Note:</strong> AFCA provides free, fair and independent financial services complaint resolution.
-                Please allow us the opportunity to resolve your complaint first before contacting AFCA.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
   </div>
 </template>
 
 <script setup lang="ts">
 const isSubmitting = ref(false)
+
+const shareFeedback = false;
 
 const processSteps = [
   {
