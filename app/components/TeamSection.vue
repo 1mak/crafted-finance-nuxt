@@ -119,8 +119,8 @@
                   <Icon name="lucide:shield-check" class="w-6 h-6 text-white" />
                 </div>
                 <div class="text-center">
-                  <p class="text-sm font-semibold text-navy">Australian Credit Licence</p>
-                  <p class="text-xs text-slate-600">Fully Licensed & Regulated</p>
+                  <p class="text-sm font-semibold text-navy">Professional Expertise</p>
+                  <p class="text-xs text-slate-600">Consumer & Commercial</p>
                 </div>
               </div>
             </div>
