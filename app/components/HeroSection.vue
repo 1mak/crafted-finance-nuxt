@@ -85,7 +85,7 @@
             <div class="flex items-center gap-4">
               <Icon name="lucide:shield-check" class="w-8 h-8 text-primary-blue flex-shrink-0" />
               <div class="text-left">
-                <p class="text-sm font-semibold text-white">Australian Licensed</p>
+                <p class="text-sm font-semibold text-white">Authorised under Australian Credit Licence 543046</p>
                 <p class="text-xs text-blue-200">Credit Representative 572894</p>
               </div>
             </div>
